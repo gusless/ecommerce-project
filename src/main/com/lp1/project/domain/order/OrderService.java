@@ -3,22 +3,21 @@ package com.lp1.project.domain.order;
 import com.lp1.project.domain.address.Address;
 import com.lp1.project.domain.cart.Cart;
 import com.lp1.project.domain.payment.PaymentMethod;
+import com.lp1.project.domain.shipping.Shipping;
+import com.lp1.project.domain.user.Customer;
 
 import java.util.List;
 
 public class OrderService {
 
-    public Order finishOrder(Cart cart, PaymentMethod paymentMethod, Address address){
+    public Order finishOrder(Customer customer, Cart cart, PaymentMethod paymentMethod,
+                             Address address, Shipping shipping){
 
-        // fazer exception se for carrinho ta vazio
+        // fazer exception se carrinho ta vazio
 
-        Order order = new Order();
-
-        order.setPaymentMethod(paymentMethod);
-        order.setAddress(address);
-        order.setItems(convertItems(cart));
-        order.setTotalValue(cart.getTotalValue());
-        order.setSituation(OrderSituation.ORDER_RECEIVED);
+        Order order = new Order(customer, paymentMethod, address,
+                convertItems(cart), cart.getTotalValue(),
+                OrderSituation.ORDER_RECEIVED, shipping);
 
         return order;
     }

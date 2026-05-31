@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Product {
     private long id;
-    private String productName;
+    private String name;
     private String description;
     private Integer stockQuantity;
     private BigDecimal price;
@@ -17,16 +17,41 @@ public class Product {
     private Category category;
     private Float weight;
     private String technicalSpecs;
+    private Integer warrantyMonths;
+
     private Float totalRating;
     private List<Review> reviews;
-    private Integer warrantyMonths;
+
+    private static long idCount = 0;
+
+    public Product(String name, String description, BigDecimal price,
+                   Brand brand, Category category, Float weight, String technicalSpecs,
+                   Integer warrantyMonths, Integer stockQuantity) {
+
+        // lançar exception caso o produto já exista
+
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.brand = brand;
+        this.category = category;
+        this.weight = weight;
+        this.technicalSpecs = technicalSpecs;
+        this.warrantyMonths = warrantyMonths;
+        this.stockQuantity = stockQuantity;
+
+        this.id = idCount;
+        idCount++;
+
+        System.out.println("Produto nº" + this.id + " criado com sucesso");
+    }
 
     public long getId() {
         return id;
     }
 
-    public String getProductName() {
-        return productName;
+    public String getName() {
+        return name;
     }
 
     public String getDescription() {
@@ -68,4 +93,6 @@ public class Product {
     public Integer getWarrantyMonths() {
         return warrantyMonths;
     }
+
+
 }

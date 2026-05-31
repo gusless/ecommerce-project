@@ -1,4 +1,4 @@
-package com.lp1.project.domain.transporter;
+package com.lp1.project.domain.shipping;
 
 import java.net.URI;
 

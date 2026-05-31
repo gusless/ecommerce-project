@@ -2,31 +2,54 @@ package com.lp1.project.domain.order;
 
 import com.lp1.project.domain.address.Address;
 import com.lp1.project.domain.payment.PaymentMethod;
-import com.lp1.project.domain.transporter.Transporter;
-import com.lp1.project.domain.user.User;
+import com.lp1.project.domain.shipping.Shipping;
+import com.lp1.project.domain.shipping.Transporter;
+import com.lp1.project.domain.user.Customer;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class Order {
     private long id;
-    private User user;
-    private Transporter transporter;
+    private Customer customer;
+    private PaymentMethod paymentMethod;
     private Address address;
     private List<OrderItem> items;
     private BigDecimal totalValue;
-    private BigDecimal shipping;
-    private LocalDateTime dateTimePurchase;
-    private PaymentMethod paymentMethod;
     private OrderSituation situation;
+    private Transporter transporter;
+
+    private LocalDateTime dateTimePurchase;
+
+    private static long idCount = 0;
+
+    Order(Customer customer, PaymentMethod paymentMethod, Address address, List<OrderItem> items,
+          BigDecimal totalValue, OrderSituation situation, Shipping shipping){
+        this.customer = customer;
+        this.paymentMethod = paymentMethod;
+        this.address = address;
+        this.items = items;
+        this.situation = situation;
+        this.totalValue = totalValue.add(shipping.getShippingValue());
+        this.transporter = shipping.getTransporter();
+
+        this.dateTimePurchase = LocalDateTime.now();
+
+        this.id = idCount;
+        idCount++;
+
+        System.out.println("Pedido nº" + this.id + " criado em " +
+                dateTimePurchase.format(DateTimeFormatter.ofPattern("HH:mm:ss dd/MM/yyyy")));
+    }
 
     public long getId() {
         return id;
     }
 
-    public User getUser() {
-        return user;
+    public Customer getCustomer() {
+        return customer;
     }
 
     public Transporter getTransporter() {
@@ -45,10 +68,6 @@ public class Order {
         return totalValue;
     }
 
-    public BigDecimal getShipping() {
-        return shipping;
-    }
-
     public LocalDateTime getDateTimePurchase() {
         return dateTimePurchase;
     }
@@ -61,39 +80,4 @@ public class Order {
         return situation;
     }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public void setTransporter(Transporter transporter) {
-        this.transporter = transporter;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-
-    public void setItems(List<OrderItem> items) {
-        this.items = items;
-    }
-
-    public void setTotalValue(BigDecimal totalValue) {
-        this.totalValue = totalValue;
-    }
-
-    public void setShipping(BigDecimal shipping) {
-        this.shipping = shipping;
-    }
-
-    public void setDateTimePurchase(LocalDateTime dateTimePurchase) {
-        this.dateTimePurchase = dateTimePurchase;
-    }
-
-    public void setPaymentMethod(PaymentMethod paymentMethod) {
-        this.paymentMethod = paymentMethod;
-    }
-
-    public void setSituation(OrderSituation situation) {
-        this.situation = situation;
-    }
 }
