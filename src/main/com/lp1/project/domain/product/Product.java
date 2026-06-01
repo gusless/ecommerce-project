@@ -1,6 +1,5 @@
 package com.lp1.project.domain.product;
 
-import com.lp1.project.domain.brand.Brand;
 import com.lp1.project.domain.category.Category;
 import com.lp1.project.domain.review.Review;
 
@@ -13,7 +12,6 @@ public class Product {
     private String description;
     private Integer stockQuantity;
     private BigDecimal price;
-    private Brand brand;
     private Category category;
     private Float weight;
     private String technicalSpecs;
@@ -25,7 +23,7 @@ public class Product {
     private static long idCount = 0;
 
     public Product(String name, String description, BigDecimal price,
-                   Brand brand, Category category, Float weight, String technicalSpecs,
+                   Category category, Float weight, String technicalSpecs,
                    Integer warrantyMonths, Integer stockQuantity) {
 
         // lançar exception caso o produto já exista
@@ -33,7 +31,6 @@ public class Product {
         this.name = name;
         this.description = description;
         this.price = price;
-        this.brand = brand;
         this.category = category;
         this.weight = weight;
         this.technicalSpecs = technicalSpecs;
@@ -64,10 +61,6 @@ public class Product {
 
     public BigDecimal getPrice() {
         return price;
-    }
-
-    public Brand getBrand() {
-        return brand;
     }
 
     public Category getCategory() {

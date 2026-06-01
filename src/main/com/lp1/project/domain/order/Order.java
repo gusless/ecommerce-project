@@ -19,7 +19,7 @@ public class Order {
     private List<OrderItem> items;
     private BigDecimal totalValue;
     private OrderSituation situation;
-    private Transporter transporter;
+    private Shipping shipping;
 
     private LocalDateTime dateTimePurchase;
 
@@ -33,7 +33,7 @@ public class Order {
         this.items = items;
         this.situation = situation;
         this.totalValue = totalValue;
-        this.transporter = shipping.getTransporter();
+        this.shipping = shipping;
 
         this.dateTimePurchase = LocalDateTime.now();
 
@@ -56,8 +56,8 @@ public class Order {
         return customer;
     }
 
-    public Transporter getTransporter() {
-        return transporter;
+    public Shipping getShipping() {
+        return shipping;
     }
 
     public Address getAddress() {

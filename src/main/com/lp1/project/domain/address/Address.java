@@ -2,19 +2,29 @@ package com.lp1.project.domain.address;
 
 public class Address {
     private String cep;
-    private String state;
+    private State state;
     private String city;
     private String neighbor;
     private String street;
     private String number;
     private String complement;
-    private String type;
+
+    public Address(String cep, State state, String city, String neighbor,
+                   String street, String number, String complement) {
+        this.cep = cep;
+        this.state = state;
+        this.city = city;
+        this.neighbor = neighbor;
+        this.street = street;
+        this.number = number;
+        this.complement = complement;
+    }
 
     public String getCep() {
         return cep;
     }
 
-    public String getState() {
+    public State getState() {
         return state;
     }
 
@@ -38,7 +48,4 @@ public class Address {
         return complement;
     }
 
-    public String getType() {
-        return type;
-    }
 }

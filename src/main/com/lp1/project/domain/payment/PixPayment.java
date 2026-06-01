@@ -6,8 +6,11 @@ import java.util.Random;
 public class PixPayment extends PaymentMethod {
     public String pixKey;
 
+    private static final Random RANDOM = new Random();
+
     public PixPayment(){
         generatePixKey();
+        System.out.println("Chave pix: " + pixKey);
     }
 
     @Override
@@ -17,9 +20,18 @@ public class PixPayment extends PaymentMethod {
     }
 
     private void generatePixKey(){
-        this.pixKey = String.valueOf(new Random().nextLong(999999999)
-        + new Random().nextLong(999999999));
-        //gambiarra ^^^^
+
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < 20; i++){
+            sb.append(RANDOM.nextInt(i));
+        }
+        sb.append("PIXCODE");
+        for (int i = 0; i < 10; i++){
+            sb.append(RANDOM.nextInt(i));
+        }
+
+        //gambiarra
     }
 
     public String getPixKey() {
