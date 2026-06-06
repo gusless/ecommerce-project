@@ -12,6 +12,48 @@ public class Review {
     private Product product;
     private String title;
     private String comment;
-    private Integer likes;
     private LocalDateTime dateReview;
+
+    private static long idCount = 1;
+
+    public Review(User user, Integer stars, Product product, String title, String comment) {
+        this.user = user;
+        this.stars = stars;
+        this.product = product;
+        this.title = title;
+        this.comment = comment;
+
+        this.dateReview = LocalDateTime.now();
+
+        this.id = idCount;
+        idCount++;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public Integer getStars() {
+        return stars;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public LocalDateTime getDateReview() {
+        return dateReview;
+    }
 }
