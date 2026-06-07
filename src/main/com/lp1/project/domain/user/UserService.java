@@ -4,8 +4,25 @@ import java.time.LocalDate;
 
 public class UserService {
 
-    public void enter(String login, String password){
+    private final UserRepository repository;
 
+    public UserService(UserRepository repository) {
+        this.repository = repository;
+    }
+
+    public User login(String login, String password){
+        User user = repository.findByCPF(login);
+
+        if (user == null)
+            user = repository.findByEmail(login);
+
+        if (user == null)
+            throw new RuntimeException("Login não cadastrado");
+
+        if (!user.getPassword().equals(password))
+            throw new RuntimeException("Senha incorreta");
+
+        return user;
     }
 
     public User register(String name, LocalDate birth,
@@ -18,9 +35,21 @@ public class UserService {
         validPassword(password);
         validNumberPhone(numberPhone);
 
-        //verificar se ja existe
+        if (repository.findByEmail(email) != null)
+            throw new IllegalArgumentException("Este e-mail já está sendo utilizado");
+        if (repository.findByCPF(cpf) != null)
+            throw new IllegalArgumentException("Este CPF já está cadastrado.");
 
-        User user = new User(name, birth, cpf, email, password, numberPhone);
+        User user = new User(
+                name,
+                birth,
+                cpf,
+                email,
+                password,
+                numberPhone
+        );
+
+        repository.save(user);
         System.out.println("Usuário nº" + user.getId() + " cadastrado com sucesso");
 
         return user;

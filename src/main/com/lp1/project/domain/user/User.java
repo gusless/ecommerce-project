@@ -1,6 +1,7 @@
 package com.lp1.project.domain.user;
 
 import java.time.LocalDate;
+import java.util.List;
 
 
 public class User {
@@ -26,6 +27,15 @@ public class User {
 
         this.id = idCount;
         idCount++;
+    }
+
+    public static void synchronizeIdCounter(List<User> users) {
+        long maxId = users.stream()
+                .mapToLong(User::getId)
+                .max()
+                .orElse(0);
+
+        idCount = maxId + 1;
     }
 
     public long getId() {
