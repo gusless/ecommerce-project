@@ -1,4 +1,4 @@
-package com.lp1.project.domain.payment;
+package java.com.lp1.project.domain.payment;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

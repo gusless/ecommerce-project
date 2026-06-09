@@ -1,11 +1,9 @@
-package com.lp1.project.domain.order;
+package java.com.lp1.project.domain.order;
 
-import com.lp1.project.domain.address.Address;
-import com.lp1.project.domain.payment.PaymentMethod;
-import com.lp1.project.domain.shipping.Shipping;
-import com.lp1.project.domain.shipping.Transporter;
-import com.lp1.project.domain.user.Customer;
-
+import java.com.lp1.project.domain.address.Address;
+import java.com.lp1.project.domain.payment.PaymentMethod;
+import java.com.lp1.project.domain.shipping.Shipping;
+import java.com.lp1.project.domain.user.Customer;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

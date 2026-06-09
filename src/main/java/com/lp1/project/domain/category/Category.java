@@ -1,4 +1,4 @@
-package com.lp1.project.domain.category;
+package java.com.lp1.project.domain.category;
 
 public class Category {
     private long id;

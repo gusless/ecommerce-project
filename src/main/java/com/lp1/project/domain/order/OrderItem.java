@@ -1,7 +1,6 @@
-package com.lp1.project.domain.order;
+package java.com.lp1.project.domain.order;
 
-import com.lp1.project.domain.product.Product;
-
+import java.com.lp1.project.domain.product.Product;
 import java.math.BigDecimal;
 
 public class OrderItem {

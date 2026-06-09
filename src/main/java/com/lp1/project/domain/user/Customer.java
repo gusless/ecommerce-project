@@ -1,10 +1,9 @@
-package com.lp1.project.domain.user;
+package java.com.lp1.project.domain.user;
 
-import com.lp1.project.domain.address.Address;
-import com.lp1.project.domain.order.Order;
-import com.lp1.project.domain.product.Product;
-import com.lp1.project.domain.review.Review;
-
+import java.com.lp1.project.domain.address.Address;
+import java.com.lp1.project.domain.order.Order;
+import java.com.lp1.project.domain.product.Product;
+import java.com.lp1.project.domain.review.Review;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;

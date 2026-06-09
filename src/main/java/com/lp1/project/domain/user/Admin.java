@@ -1,4 +1,4 @@
-package com.lp1.project.domain.user;
+package java.com.lp1.project.domain.user;
 
 import java.time.LocalDate;
 

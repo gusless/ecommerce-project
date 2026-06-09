@@ -1,4 +1,4 @@
-package com.lp1.project.domain.order;
+package java.com.lp1.project.domain.order;
 
 public enum OrderSituation {
     ORDER_RECEIVED("OrderReceived"),

@@ -1,8 +1,8 @@
-package com.lp1.project.domain.review;
+package java.com.lp1.project.domain.review;
 
-import com.lp1.project.domain.product.Product;
-import com.lp1.project.domain.user.User;
 
+import java.com.lp1.project.domain.product.Product;
+import java.com.lp1.project.domain.user.User;
 import java.time.LocalDateTime;
 
 public class Review {

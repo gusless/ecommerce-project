@@ -1,4 +1,4 @@
-package com.lp1.project.domain.shipping;
+package java.com.lp1.project.domain.shipping;
 
 import java.math.BigDecimal;
 import java.net.URI;

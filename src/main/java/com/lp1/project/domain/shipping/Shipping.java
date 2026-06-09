@@ -1,6 +1,6 @@
-package com.lp1.project.domain.shipping;
+package java.com.lp1.project.domain.shipping;
 
-import com.lp1.project.domain.address.Address;
+import java.com.lp1.project.domain.address.Address;
 
 import java.math.BigDecimal;
 

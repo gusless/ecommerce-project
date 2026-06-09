@@ -1,10 +1,10 @@
-package com.lp1.project.domain.order;
+package java.com.lp1.project.domain.order;
 
-import com.lp1.project.domain.address.Address;
-import com.lp1.project.domain.cart.Cart;
-import com.lp1.project.domain.payment.*;
-import com.lp1.project.domain.shipping.Shipping;
-import com.lp1.project.domain.user.Customer;
+import java.com.lp1.project.domain.address.Address;
+import java.com.lp1.project.domain.cart.Cart;
+import java.com.lp1.project.domain.payment.*;
+import java.com.lp1.project.domain.shipping.Shipping;
+import java.com.lp1.project.domain.user.Customer;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

@@ -1,4 +1,4 @@
-package com.lp1.project.domain.address;
+package java.com.lp1.project.domain.address;
 
 public class Address {
     private String cep;

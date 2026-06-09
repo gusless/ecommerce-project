@@ -1,7 +1,6 @@
-package com.lp1.project.domain.cart;
+package java.com.lp1.project.domain.cart;
 
-import com.lp1.project.domain.product.Product;
-
+import java.com.lp1.project.domain.product.Product;
 import java.math.BigDecimal;
 import java.util.List;
 

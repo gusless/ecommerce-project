@@ -1,8 +1,8 @@
-package com.lp1.project.domain.product;
+package java.com.lp1.project.domain.product;
 
-import com.lp1.project.domain.category.Category;
-import com.lp1.project.domain.review.Review;
 
+import java.com.lp1.project.domain.category.Category;
+import java.com.lp1.project.domain.review.Review;
 import java.math.BigDecimal;
 import java.util.List;
 
