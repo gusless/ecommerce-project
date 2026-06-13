@@ -43,6 +43,15 @@ public class Product {
         System.out.println("Produto nº" + this.id + " criado com sucesso");
     }
 
+    public static void synchronizeIdCounter(List<Product> products) {
+        long maxId = products.stream()
+                .mapToLong(Product::getId)
+                .max()
+                .orElse(0);
+
+        idCount = maxId + 1;
+    }
+
     public long getId() {
         return id;
     }
