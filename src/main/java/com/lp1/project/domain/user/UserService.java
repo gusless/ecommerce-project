@@ -1,5 +1,7 @@
 package com.lp1.project.domain.user;
 
+import com.lp1.project.domain.repository.UserRepository;
+
 import java.time.LocalDate;
 
 public class UserService {

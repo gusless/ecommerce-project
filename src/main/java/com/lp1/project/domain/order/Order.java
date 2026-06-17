@@ -2,6 +2,7 @@ package com.lp1.project.domain.order;
 
 import com.lp1.project.domain.address.Address;
 import com.lp1.project.domain.payment.PaymentMethod;
+import com.lp1.project.domain.product.Product;
 import com.lp1.project.domain.shipping.Shipping;
 import com.lp1.project.domain.shipping.Transporter;
 import com.lp1.project.domain.user.Customer;
@@ -42,6 +43,15 @@ public class Order {
 
         System.out.println("Pedido nº" + this.id + " criado em " +
                 dateTimePurchase.format(DateTimeFormatter.ofPattern("HH:mm:ss dd/MM/yyyy")));
+    }
+
+    public static void synchronizeIdCounter(List<Order> order) {
+        long maxId = order.stream()
+                .mapToLong(Order::getId)
+                .max()
+                .orElse(0);
+
+        idCount = maxId + 1;
     }
 
     public void setSituation(OrderSituation situation) {

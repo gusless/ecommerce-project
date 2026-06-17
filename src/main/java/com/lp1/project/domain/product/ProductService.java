@@ -1,5 +1,6 @@
 package com.lp1.project.domain.product;
 
+import com.lp1.project.domain.repository.ProductRepository;
 import com.lp1.project.domain.user.Admin;
 import com.lp1.project.domain.user.User;
 

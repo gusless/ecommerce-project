@@ -1,9 +1,5 @@
 package com.lp1.project;
 
-import com.lp1.project.domain.user.User;
-import com.lp1.project.domain.user.UserRepository;
-
-import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Main {

@@ -1,7 +1,10 @@
 package com.lp1.project.domain.shipping;
 
+import com.lp1.project.domain.user.User;
+
 import java.math.BigDecimal;
 import java.net.URI;
+import java.util.List;
 
 public class Transporter {
     private long id;
@@ -23,6 +26,15 @@ public class Transporter {
         this.id = idCount;
         idCount++;
 
+    }
+
+    public static void synchronizeIdCounter(List<Transporter> transporters) {
+        long maxId = transporters.stream()
+                .mapToLong(Transporter::getId)
+                .max()
+                .orElse(0);
+
+        idCount = maxId + 1;
     }
 
     public long getId() {
