@@ -2,6 +2,7 @@ package com.lp1.project.domain.user;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Objects;
 
 
 public class User {
@@ -65,4 +66,31 @@ public class User {
     public String getNumberPhone() {
         return numberPhone;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof User user)) {
+            return false;
+        }
+        return cpf.equals(user.cpf);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(cpf);
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
+
 }

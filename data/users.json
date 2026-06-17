@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Maria",
+    "birth": "2000-05-10",
+    "cpf": "12345678901",
+    "email": "maria@gmail.com",
+    "password": "Senha@123",
+    "numberPhone": "84999999999"
+  },
+  {
+    "id": 2,
+    "name": "Eduarda",
+    "birth": "2005-08-17",
+    "cpf": "12345678989",
+    "email": "eduarda@gmail.com",
+    "password": "12345",
+    "numberPhone": "8475961212"
+  }
+]
