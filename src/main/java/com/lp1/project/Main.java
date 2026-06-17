@@ -1,5 +1,9 @@
 package com.lp1.project;
 
+import com.lp1.project.domain.repository.UserRepository;
+import com.lp1.project.domain.user.UserService;
+
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Main {
@@ -7,6 +11,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         /*
         UserRepository repository = new UserRepository();
+        UserService service = new UserService(repository);
 
         System.out.println("Cadastro de Usuário");
 
@@ -28,9 +33,7 @@ public class Main {
         System.out.print("Telefone: ");
         String numberPhone = scanner.nextLine();
 
-        User user = new User(name, birth, cpf, email, password, numberPhone);
-
-        repository.save(user);
+        service.register(name, birth, cpf, email, password, numberPhone);
 
         System.out.println("\nUsuário salvo com sucesso!");
 

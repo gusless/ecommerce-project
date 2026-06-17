@@ -28,7 +28,9 @@ public class User {
 
         this.id = idCount;
         idCount++;
+
     }
+
 
     public static void synchronizeIdCounter(List<User> users) {
         long maxId = users.stream()
@@ -85,12 +87,10 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", cpf='" + cpf + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        return id + " - Nome: " + name +
+                "\nCPF: " + cpf +
+                "\nEmail: " + email +
+                "\nTelefone: " + numberPhone;
     }
 
 }

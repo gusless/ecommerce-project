@@ -16,6 +16,12 @@ public class OrderItem {
         subtotal = product.getPrice().multiply(BigDecimal.valueOf(quantity));
     }
 
+    @Override
+    public String toString() {
+        return product.getName() + " - Quantidade: " + quantity +
+                " - R$" + subtotal + "\n";
+    }
+
     public Product getProduct() {
         return product;
     }

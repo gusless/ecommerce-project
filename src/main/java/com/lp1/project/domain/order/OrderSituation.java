@@ -1,12 +1,13 @@
 package com.lp1.project.domain.order;
 
 public enum OrderSituation {
-    ORDER_RECEIVED("OrderReceived"),
-    PAID("Paid"),
-    SENT("Sent"),
-    RECEIVED_BY_TRANSPORTER("ReceivedByTransporter"),
-    IN_TRANSIT("InTransit"),
-    DELIVERED("Delivered");
+    ORDER_RECEIVED("Pedido recebido"),
+    PAID("Pago"),
+    SENT("Enviado"),
+    RECEIVED_BY_TRANSPORTER("Recebido pela transportadora"),
+    IN_TRANSIT("Em trânsito"),
+    DELIVERY_ROUTE("Em rota de entrega"),
+    DELIVERED("Entregue");
 
     private String situation;
 

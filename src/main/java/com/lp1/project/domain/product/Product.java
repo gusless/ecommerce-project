@@ -14,7 +14,6 @@ public class Product {
     private BigDecimal price;
     private Category category;
     private Float weight;
-    private String technicalSpecs;
     private Integer warrantyMonths;
 
     private Float totalRating;
@@ -26,14 +25,11 @@ public class Product {
                    Category category, Float weight, String technicalSpecs,
                    Integer warrantyMonths, Integer stockQuantity) {
 
-        // lançar exception caso o produto já exista
-
         this.name = name;
         this.description = description;
         this.price = price;
         this.category = category;
         this.weight = weight;
-        this.technicalSpecs = technicalSpecs;
         this.warrantyMonths = warrantyMonths;
         this.stockQuantity = stockQuantity;
 
@@ -41,6 +37,17 @@ public class Product {
         idCount++;
 
         System.out.println("Produto nº" + this.id + " criado com sucesso");
+    }
+
+    @Override
+    public String toString() {
+        return "id" + id +
+                "\nNome: " + name + " - R$" + price +
+                "\nEstoque: " + stockQuantity + "Peso: " + weight + "kg" +
+                "\nDescrição:\n" + description +
+                "\nCategoria: " + category.getName() +
+                "\nMeses de Garantia: " + warrantyMonths +
+                "\nAvaliação dos usuários: " + totalRating;
     }
 
     public static void synchronizeIdCounter(List<Product> products) {
@@ -78,10 +85,6 @@ public class Product {
 
     public Float getWeight() {
         return weight;
-    }
-
-    public String getTechnicalSpecs() {
-        return technicalSpecs;
     }
 
     public Float getTotalRating() {

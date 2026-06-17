@@ -19,6 +19,14 @@ public class Category {
         idCount++;
     }
 
+    @Override
+    public String toString() {
+        return "Categoria: " + name +
+                " - id: " + id +
+                "Descrição: " + description +
+                "\nCategoria Pai: " + parentCategory;
+    }
+
     public static void synchronizeIdCounter(List<Category> categories) {
         long maxId = categories.stream()
                 .mapToLong(Category::getId)

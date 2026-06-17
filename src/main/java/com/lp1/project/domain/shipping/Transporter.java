@@ -28,6 +28,15 @@ public class Transporter {
 
     }
 
+    @Override
+    public String toString() {
+        return "id: " + id + " Empresa: " + name +
+                "\nContato: " + contact +
+                "\nSite: " + website +
+                "\nFator de Fretagem (para admins): " + shippingFactor +
+                "\nAjuste de dias (para admins): " + deliveryDaysAdjustment;
+    }
+
     public static void synchronizeIdCounter(List<Transporter> transporters) {
         long maxId = transporters.stream()
                 .mapToLong(Transporter::getId)

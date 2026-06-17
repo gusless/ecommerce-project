@@ -45,6 +45,21 @@ public class Order {
                 dateTimePurchase.format(DateTimeFormatter.ofPattern("HH:mm:ss dd/MM/yyyy")));
     }
 
+    @Override
+    public String toString() {
+
+        return "Pedido " + id + " - "
+                + dateTimePurchase.format(DateTimeFormatter.ofPattern("HH:mm:ss dd/MM/yyyy")) +
+                "\nCliente: " + customer.getName() +
+                "\nMétodo de pagamento: " + paymentMethod +
+                "\nProdutos:\n" + items +
+                "\nTransportadora: " + shipping.getTransporter() +
+                " - Frete: R$" + shipping.getShippingValue() +
+                "\nTotal: R$" + totalValue +
+                "\nSituação: " + situation.getSituation() +
+                "\nEndereço:\n " + address;
+    }
+
     public static void synchronizeIdCounter(List<Order> order) {
         long maxId = order.stream()
                 .mapToLong(Order::getId)

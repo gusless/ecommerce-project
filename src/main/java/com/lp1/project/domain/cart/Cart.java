@@ -9,6 +9,14 @@ public class Cart {
     private List<CartItem> items;
     private BigDecimal cartSubtotal;
 
+    @Override
+    public String toString() {
+        return "Seu Carrinho:\n" +
+                items +
+                "\nTotal:" + cartSubtotal +
+                '\n';
+    }
+
     public void addItem(Product product, int quantity){
 
         for (CartItem item : items){

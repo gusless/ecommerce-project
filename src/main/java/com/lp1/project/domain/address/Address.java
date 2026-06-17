@@ -20,6 +20,20 @@ public class Address {
         this.complement = complement;
     }
 
+    @Override
+    public String toString() {
+        return """
+                CEP: %s
+                Estado: %s
+                Cidade: %s
+                Bairro: %s
+                Rua: %s
+                Número: %s
+                Complemento: %s
+                """.formatted(cep, state.name(), city, neighbor,
+                        street, number, complement);
+    }
+
     public String getCep() {
         return cep;
     }
