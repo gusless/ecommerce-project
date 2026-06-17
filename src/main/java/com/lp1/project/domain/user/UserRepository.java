@@ -1,5 +1,8 @@
 package com.lp1.project.domain.user;
 
+import java.time.LocalDate;
+import com.lp1.project.config.LocalDateAdapter;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -18,6 +21,10 @@ public class UserRepository {
 
     public UserRepository() {
         gson = new GsonBuilder()
+                .registerTypeAdapter(
+                        LocalDate.class,
+                        new LocalDateAdapter()
+                )
                 .setPrettyPrinting()
                 .create();
 
@@ -55,11 +62,15 @@ public class UserRepository {
     }
 
     private void persist() {
-        try (Writer writer = new FileWriter(FILE_PATH)){
-            gson.toJson(users, writer);
+        try {
+            File file = new File(FILE_PATH);
+            file.getParentFile().mkdirs();
 
-        } catch (Exception e){
-            throw new RuntimeException("Erro ao salvar usuários");
+            try (Writer writer = new FileWriter(file)) {
+                gson.toJson(users, writer);
+            }
+        } catch (IOException e) {
+            throw new RuntimeException("Erro ao salvar usuários", e);
         }
     }
 
@@ -83,7 +94,7 @@ public class UserRepository {
             return loadedUsers;
 
         } catch (Exception e) {
-            throw new RuntimeException("Erro ao carregar usuários");
+            throw new RuntimeException("Erro ao carregar usuários", e);
         }
     }
 }
