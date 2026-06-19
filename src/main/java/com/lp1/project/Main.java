@@ -1,48 +1,23 @@
 package com.lp1.project;
 
-import com.lp1.project.domain.repository.UserRepository;
-import com.lp1.project.domain.user.UserService;
-
-import java.time.LocalDate;
-import java.util.Scanner;
+import com.lp1.project.app.UserApp;
+import com.lp1.project.app.AddressApp;
+import com.lp1.project.app.CategoryApp;
+import com.lp1.project.app.ProductApp;
+import com.lp1.project.app.TransporterApp;
+import com.lp1.project.app.ShippingApp;
+import com.lp1.project.app.CartApp;
+import com.lp1.project.app.OrderApp;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        /*
-        UserRepository repository = new UserRepository();
-        UserService service = new UserService(repository);
-
-        System.out.println("Cadastro de Usuário");
-
-        System.out.print("Nome: ");
-        String name = scanner.nextLine();
-
-        System.out.print("Data de nascimento (AAAA-MM-DD): ");
-        LocalDate birth = LocalDate.parse(scanner.nextLine());
-
-        System.out.print("CPF: ");
-        String cpf = scanner.nextLine();
-
-        System.out.print("E-mail: ");
-        String email = scanner.nextLine();
-
-        System.out.print("Senha: ");
-        String password = scanner.nextLine();
-
-        System.out.print("Telefone: ");
-        String numberPhone = scanner.nextLine();
-
-        service.register(name, birth, cpf, email, password, numberPhone);
-
-        System.out.println("\nUsuário salvo com sucesso!");
-
-        System.out.println("\nUsuários cadastrados:");
-
-        for (User u : repository.findAll()) {
-            System.out.println(u);
-        }
-        */
-        scanner.close();
+        UserApp.testUser();
+        //AddressApp.testAddress();
+        // CategoryApp.testCategory();
+        // ProductApp.testProduct();
+        // TransporterApp.testTransporter();
+        // ShippingApp.testShipping();
+        // CartApp.testCart();
+        // OrderApp.testOrder();
     }
 }
