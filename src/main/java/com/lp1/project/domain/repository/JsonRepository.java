@@ -64,9 +64,7 @@ public abstract class JsonRepository<T> {
 
         try (Reader reader = new FileReader(file)){
 
-            Type type = new TypeToken<List<T>>() {}.getType();
-
-            List<T> loadedItems = gson.fromJson(reader, type);
+            List<T> loadedItems = gson.fromJson(reader, this.type);
 
             return loadedItems == null ?
                     new ArrayList<>() :
