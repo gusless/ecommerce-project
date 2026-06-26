@@ -7,7 +7,8 @@ public class MainMenuScreen {
     public static void show() {
         boolean exit = false;
         while (!exit) {
-            System.out.println("1. Login\n2. Criar conta\n3. Sair");
+            System.out.println("\n=====MENU=====\n1. Login\n2. Criar conta\n3. Sair");
+            System.out.print(": ");
             int op = App.SCANNER.nextInt();
             App.SCANNER.nextLine();
 
@@ -27,7 +28,7 @@ public class MainMenuScreen {
                 case 3:
                     return;
                 default:
-                    System.out.println("Opção inválida");
+                    System.out.println("\nOpção inválida. Tente novamente.");
             }
         }
 

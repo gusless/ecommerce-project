@@ -14,11 +14,11 @@ public class ProductService {
 
     public void createProduct(User user, Product product) {
         if (!(user.getRole().equals(UserRole.ADMIN))) {
-            throw new RuntimeException("Apenas administradores podem cadastrar produtos.");
+            throw new RuntimeException("\nApenas administradores podem cadastrar produtos.");
         }
 
         if (repository.findByName(product.getName()) != null) {
-            throw new RuntimeException("Produto já existe.");
+            throw new RuntimeException("\nProduto já existe.");
         }
 
         repository.save(product);

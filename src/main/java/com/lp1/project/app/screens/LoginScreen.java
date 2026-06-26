@@ -12,6 +12,7 @@ public class LoginScreen {
     public static void show(Session session) {
         while (true) {
             try {
+                System.out.println("\n=====LOGIN=====");
                 String login = UserForm.loginName();
                 String password = UserForm.password();
 
@@ -19,7 +20,7 @@ public class LoginScreen {
 
                 session.login(user);
 
-                System.out.println("Login bem-sucedido, seja bem-vindo(a) " + user.getName());
+                System.out.println("\nLogin bem-sucedido, seja bem-vindo(a) " + user.getName());
 
                 return;
             } catch (Exception e) {
@@ -27,6 +28,7 @@ public class LoginScreen {
 
                 System.out.println("1. Tentar de novo");
                 System.out.println("2. Sair");
+                System.out.print(": ");
 
                 int op = App.SCANNER.nextInt();
                 App.SCANNER.nextLine();

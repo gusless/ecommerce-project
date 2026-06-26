@@ -34,6 +34,10 @@ public class App {
 
     public static ProductService getProductService() {return productService;}
 
+    public static CategoryService getCategoryService() {return categoryService;}
+
+    public static CategoryRepository getCategoryRepository() {return categoryRepository;}
+
     public static void run() {
         createDefaultAdmin(userRepository);
         MainMenuScreen.show();

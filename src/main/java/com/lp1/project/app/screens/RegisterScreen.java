@@ -14,6 +14,7 @@ public class RegisterScreen {
     public static void show(Session session) {
         while(true){
             try {
+                System.out.println("\n=====CADASTRO=====");
                 String name = UserForm.name();
                 LocalDate birth = UserForm.birth();
                 String cpf = UserForm.cpf();
@@ -34,6 +35,8 @@ public class RegisterScreen {
 
                 System.out.println("1. Tentar novamente");
                 System.out.println("2. Sair");
+                System.out.print(": ");
+
 
                 int op = App.SCANNER.nextInt();
                 App.SCANNER.nextLine();

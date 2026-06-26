@@ -12,24 +12,32 @@ public class AddProductScreen {
     private static final ProductService service = App.getProductService();
 
     public static void show() {
-        try {
-            String name = AddProductForm.name();
-            String description = AddProductForm.description();
-            Integer stockQuantity = AddProductForm.stockQuantity();
-            BigDecimal price = AddProductForm.price();
-//            Category category = AddProductForm.category();
-            Float weight = AddProductForm.weight();
-            String technicalSpecs = AddProductForm.technicalSpecs();
-            Integer warrantyMonths = AddProductForm.warrantyMonths();
+        while(true){
+            try {
+                System.out.println("\n=====ADICIONAR PRODUTO=====");
+                String name = AddProductForm.name();
+                String description = AddProductForm.description();
+                Integer stockQuantity = AddProductForm.stockQuantity();
+                BigDecimal price = AddProductForm.price();
+                App.SCANNER.nextLine();
+                Category category = AddProductForm.category();
+                Float weight = AddProductForm.weight();
+                App.SCANNER.nextLine();
+                String technicalSpecs = AddProductForm.technicalSpecs();
+                Integer warrantyMonths = AddProductForm.warrantyMonths();
+                App.SCANNER.nextLine();
 
+                Product newProduct = new Product(name, description, price, category, weight, technicalSpecs, warrantyMonths, stockQuantity);
 
-//            Product newProduct = new Product(name, description, price, category, weight, technicalSpecs, warrantyMonths, stockQuantity);
+                service.createProduct(App.getSession().getCurrentUser(), newProduct);
 
-//            service.createProduct(App.getSession().getCurrentUser(), newProduct);
+                System.out.println("\nProduto criado com sucesso");
 
-            System.out.println("Produto criado com sucesso");
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+                return;
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
         }
+
     }
 }
