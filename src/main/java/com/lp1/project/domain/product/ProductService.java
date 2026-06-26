@@ -3,6 +3,7 @@ package com.lp1.project.domain.product;
 import com.lp1.project.domain.repository.ProductRepository;
 import com.lp1.project.domain.user.Admin;
 import com.lp1.project.domain.user.User;
+import com.lp1.project.domain.user.UserRole;
 
 public class ProductService {
     private final ProductRepository repository;
@@ -12,7 +13,7 @@ public class ProductService {
     }
 
     public void createProduct(User user, Product product) {
-        if (!(user instanceof Admin)) {
+        if (!(user.getRole().equals(UserRole.ADMIN))) {
             throw new RuntimeException("Apenas administradores podem cadastrar produtos.");
         }
 
@@ -20,6 +21,6 @@ public class ProductService {
             throw new RuntimeException("Produto já existe.");
         }
 
-        
+        repository.save(product);
     }
 }

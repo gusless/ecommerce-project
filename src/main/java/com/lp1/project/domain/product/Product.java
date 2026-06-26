@@ -37,8 +37,6 @@ public class Product {
 
         this.id = idCount;
         idCount++;
-
-        System.out.println("Produto nº" + this.id + " criado com sucesso");
     }
 
     @Override
