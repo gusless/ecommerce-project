@@ -2,6 +2,8 @@ package com.lp1.project.app.screens;
 
 import com.lp1.project.app.App;
 
+import java.util.InputMismatchException;
+
 public class AdminMainScreen {
     public static void show() {
         while (App.getSession().isLoggedIn()) {
@@ -15,12 +17,17 @@ public class AdminMainScreen {
                 switch (op) {
                     case 1 -> AddProductScreen.show();
                     case 2 -> AddCategoryScreen.show();
+                    case 3 -> AddTransporterScreen.show();
                     case 7 -> App.getSession().logout();
 
                     default -> System.out.println("\nOpção inválida. Tente novamente.");
                 }
+            } catch (InputMismatchException e) {
+                System.out.println("\nDigite um número válido.");
+                App.SCANNER.nextLine();
             } catch (Exception e) {
                 System.out.println(e.getMessage());
+                App.SCANNER.nextLine();
             }
         }
 

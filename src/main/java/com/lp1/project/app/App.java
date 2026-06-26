@@ -5,7 +5,9 @@ import com.lp1.project.domain.category.CategoryService;
 import com.lp1.project.domain.product.ProductService;
 import com.lp1.project.domain.repository.CategoryRepository;
 import com.lp1.project.domain.repository.ProductRepository;
+import com.lp1.project.domain.repository.TransporterRepository;
 import com.lp1.project.domain.repository.UserRepository;
+import com.lp1.project.domain.shipping.TransporterService;
 import com.lp1.project.domain.user.Admin;
 import com.lp1.project.domain.user.UserService;
 
@@ -23,6 +25,8 @@ public class App {
     private static final ProductService productService = new ProductService(productRepository);
     private static final CategoryRepository categoryRepository = new CategoryRepository();
     private static final CategoryService categoryService = new CategoryService(categoryRepository);
+    private static final TransporterRepository transporterRepository = new TransporterRepository();
+    private static final TransporterService transporterService = new TransporterService(transporterRepository);
 
     public static UserService getUserService() {
         return userService;
@@ -37,6 +41,10 @@ public class App {
     public static CategoryService getCategoryService() {return categoryService;}
 
     public static CategoryRepository getCategoryRepository() {return categoryRepository;}
+
+    public static TransporterService getTransporterService() {
+        return transporterService;
+    }
 
     public static void run() {
         createDefaultAdmin(userRepository);

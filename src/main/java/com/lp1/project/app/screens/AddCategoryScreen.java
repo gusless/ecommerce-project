@@ -18,10 +18,13 @@ public class AddCategoryScreen {
 
             service.createCategory(App.getSession().getCurrentUser(), newCategory);
 
-            System.out.println("\nCategoria criada com sucesso");
+            System.out.println("\nCategoria criada com sucesso.");
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
+            if (App.SCANNER.hasNextLine()) {
+                App.SCANNER.nextLine();
+            }
         }
 
     }

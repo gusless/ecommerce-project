@@ -31,11 +31,14 @@ public class AddProductScreen {
 
                 service.createProduct(App.getSession().getCurrentUser(), newProduct);
 
-                System.out.println("\nProduto criado com sucesso");
+                System.out.println("\nProduto criado com sucesso.");
 
                 return;
             } catch (Exception e) {
                 System.out.println(e.getMessage());
+                if (App.SCANNER.hasNextLine()) {
+                    App.SCANNER.nextLine();
+                }
             }
         }
 

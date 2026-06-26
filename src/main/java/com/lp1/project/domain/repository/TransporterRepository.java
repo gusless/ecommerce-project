@@ -29,4 +29,11 @@ public class TransporterRepository extends JsonRepository<Transporter> {
                 .orElse(null);
     }
 
+    public Transporter findByContact(String contact){
+        return items.stream()
+                .filter(t -> t.getContact().equalsIgnoreCase(contact))
+                .findFirst()
+                .orElse(null);
+    }
+
 }
