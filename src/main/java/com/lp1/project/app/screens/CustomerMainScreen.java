@@ -1,6 +1,7 @@
 package com.lp1.project.app.screens;
 
 import com.lp1.project.app.App;
+import com.lp1.project.domain.user.Customer;
 
 public class CustomerMainScreen {
     public static void show() {
@@ -12,7 +13,10 @@ public class CustomerMainScreen {
             App.SCANNER.nextLine();
 
             switch (op) {
-                case 6 -> App.getSession().logout();            }
+                case 1 -> NewOrderScreen.show();
+                case 2 -> SeePreviousOrdersScreen.show();
+                case 6 -> App.getSession().logout();
+            }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

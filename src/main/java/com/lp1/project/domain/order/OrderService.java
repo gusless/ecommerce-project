@@ -3,6 +3,7 @@ package com.lp1.project.domain.order;
 import com.lp1.project.domain.address.Address;
 import com.lp1.project.domain.cart.Cart;
 import com.lp1.project.domain.payment.*;
+import com.lp1.project.domain.repository.OrderRepository;
 import com.lp1.project.domain.shipping.Shipping;
 import com.lp1.project.domain.user.Customer;
 
@@ -11,6 +12,11 @@ import java.math.RoundingMode;
 import java.util.List;
 
 public class OrderService {
+    private final OrderRepository repository;
+
+    public OrderService(OrderRepository repository) {
+        this.repository = repository;
+    }
 
     public Order finishOrder(Customer customer, Cart cart, PaymentMethod paymentMethod,
                              Address address, Shipping shipping){

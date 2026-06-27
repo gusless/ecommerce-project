@@ -1,0 +1,33 @@
+package com.lp1.project.app.forms;
+
+import com.lp1.project.app.App;
+import com.lp1.project.domain.product.Product;
+
+import java.util.List;
+
+public class NewOrderForm {
+    public static Product product() {
+        List<Product> products = App.getProductRepository().findProductsInStock();
+
+        for (Product product : products) {
+            System.out.println(product.getId() + " - " + product.getName());
+        }
+
+        System.out.print("Escolha o produto para adicionar no carrinho (ID): ");
+        int id = App.SCANNER.nextInt();
+        App.SCANNER.nextLine();
+
+        if (id < 1 || id > products.size()) {
+            throw new RuntimeException("\nProduto inválido.");
+        }
+
+        return products.get(id-1);
+    }
+
+    public static Integer quantity(Product product) {
+        System.out.println(product);
+        System.out.print("Escolha a quantidade ou 0 caso queira escolher outro produto: ");
+
+        return App.SCANNER.nextInt();
+    }
+}

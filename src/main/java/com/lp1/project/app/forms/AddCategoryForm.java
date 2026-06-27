@@ -100,7 +100,7 @@ public class AddCategoryForm {
         }
 
         if(id < 1 || id > categories.size()){
-            throw new RuntimeException("Categoria inválida");
+            throw new RuntimeException("\nCategoria inválida.");
         }
 
         return categories.get((int)id-1);

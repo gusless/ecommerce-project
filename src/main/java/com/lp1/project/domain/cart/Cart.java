@@ -3,11 +3,17 @@ package com.lp1.project.domain.cart;
 import com.lp1.project.domain.product.Product;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cart {
     private List<CartItem> items;
     private BigDecimal cartSubtotal;
+
+    public Cart() {
+        this.items = new ArrayList<>();
+        this.cartSubtotal = BigDecimal.ZERO;
+    }
 
     @Override
     public String toString() {

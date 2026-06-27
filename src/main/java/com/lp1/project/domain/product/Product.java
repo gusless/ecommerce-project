@@ -43,7 +43,7 @@ public class Product {
     public String toString() {
         return "id" + id +
                 "\nNome: " + name + " - R$" + price +
-                "\nEstoque: " + stockQuantity + "Peso: " + weight + "kg" +
+                "\nEstoque: " + stockQuantity + " Peso: " + weight + "kg" +
                 "\nDescrição:\n" + description +
                 "\nEspecificações técnicas:\n" + technicalSpecs +
                 "\nCategoria: " + category.getName() +

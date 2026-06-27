@@ -6,6 +6,8 @@ import com.lp1.project.domain.product.Product;
 import com.lp1.project.domain.review.Review;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -19,10 +21,23 @@ public class Customer extends User {
     public Customer(String name, LocalDate birth, String cpf, String email, String password, String numberPhone) {
         super(name, birth, cpf, email, password, numberPhone);
         setRole(UserRole.CUSTOMER);
+
+        addresses = new ArrayList<>();
+        favorites = new HashSet<>();
+        orders = new ArrayList<>();
+        reviews = new ArrayList<>();
+    }
+
+    public void addAddress(Address address) {
+        addresses.add(address);
     }
 
     public Address getPrincipalAddress() {
         return principalAddress;
+    }
+
+    public void setPrincipalAddress(Address principalAddress) {
+        this.principalAddress = principalAddress;
     }
 
     public List<Address> getAddresses() {

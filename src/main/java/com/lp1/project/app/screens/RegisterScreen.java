@@ -22,7 +22,7 @@ public class RegisterScreen {
                 String password = UserForm.password();
                 String phone = UserForm.phone();
 
-                Customer user = (Customer) service.register(name, birth, cpf, email, password, phone);
+                Customer user = service.register(name, birth, cpf, email, password, phone);
 
                 System.out.println("\nUsuário criado: " + user.getName());
 

@@ -81,4 +81,8 @@ public abstract class JsonRepository<T> {
         }
     }
 
+    public void update() {
+        persist();
+    }
+
 }

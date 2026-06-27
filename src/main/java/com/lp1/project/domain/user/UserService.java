@@ -27,7 +27,7 @@ public class UserService {
         return user;
     }
 
-    public User register(String name, LocalDate birth,
+    public Customer register(String name, LocalDate birth,
                          String cpf, String email, String password,
                          String numberPhone){
 
@@ -42,7 +42,7 @@ public class UserService {
         if (repository.findByCPF(cpf) != null)
             throw new IllegalArgumentException("\nEste CPF já está cadastrado.");
 
-        User user = new Customer(
+        Customer user = new Customer(
                 name,
                 birth,
                 cpf,
