@@ -27,8 +27,10 @@ public class SeePreviousOrdersScreen {
                 switch (op) {
                     case 1 -> NewOrderScreen.show();
                     case 2 -> CustomerMainScreen.show();
-                    case 4 -> { return; }
-                    default -> System.out.println("Opção inválida. Tente novamente.");
+                    default -> {
+                        System.out.println("\nOpção inválida. Tente novamente.");
+                        continue;
+                    }
                 }
             }
 

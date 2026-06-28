@@ -28,6 +28,8 @@ public class NewOrderScreen {
 
                 while(true) {
                     Product cartProduct = NewOrderForm.product();
+                    if (cartProduct == null) return;
+
                     int quantity = NewOrderForm.quantity(cartProduct);
 
                     if(quantity == 0){
