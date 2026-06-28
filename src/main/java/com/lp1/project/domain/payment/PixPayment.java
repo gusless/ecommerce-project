@@ -9,6 +9,9 @@ public class PixPayment extends PaymentMethod {
     private static final Random RANDOM = new Random();
 
     public PixPayment(){
+    }
+
+    public void generate() {
         generatePixKey();
         System.out.println("Chave pix: " + pixKey);
     }

@@ -29,7 +29,7 @@ public class ChooseAddressScreen {
         if (op == 0){
             AddAddressScreen.show();
         } else if(op < 1 || op > addresses.size()){
-            throw new RuntimeException("\nEndereço inválido.");
+            throw new IllegalArgumentException("\nEndereço inválido.");
         }
 
         return addresses.get(op-1);

@@ -2,10 +2,6 @@ package com.lp1.project.app.screens;
 
 import com.lp1.project.app.App;
 import com.lp1.project.domain.order.Order;
-import com.lp1.project.domain.order.OrderSituation;
-import com.lp1.project.domain.payment.BankSlipPayment;
-import com.lp1.project.domain.repository.OrderRepository;
-import com.lp1.project.domain.user.Customer;
 
 import java.util.List;
 
@@ -46,7 +42,9 @@ public class SeePreviousOrdersScreen {
             switch (op) {
                 case 1 -> UpdateOrderSituation.update();
                 case 2 -> PayOrderScreen.pay();
-//            case 3 -> MakeOrderReview.review();
+                case 3 -> MakeProductReviewScreen.review();
+                case 4 -> CustomerMainScreen.show();
+                default -> System.out.println("\nEscolha inválida. Tente novamente.");
             }
         }
     }

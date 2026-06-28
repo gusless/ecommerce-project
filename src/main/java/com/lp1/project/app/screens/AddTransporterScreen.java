@@ -29,7 +29,7 @@ public class AddTransporterScreen {
 
                 System.out.println("\nTransportadora criada com sucesso.");
 
-                return;
+               AdminMainScreen.show();
             } catch (InputMismatchException e) {
                 System.out.println("\nDigite um número válido.");
                 App.SCANNER.nextLine();
@@ -42,7 +42,7 @@ public class AddTransporterScreen {
                 App.SCANNER.nextLine();
 
                 if (op == 2) {
-                    return;
+                    AdminMainScreen.show();
                 }
             }
 

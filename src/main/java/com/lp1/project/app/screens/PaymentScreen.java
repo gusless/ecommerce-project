@@ -21,6 +21,7 @@ public class PaymentScreen {
             System.out.println("Forma: Débito");
         } else if (paymentMethod instanceof PixPayment) {
             System.out.println("Forma: PIX");
+            ((PixPayment) paymentMethod).generate();
         }
 
         System.out.println("Valor: R$ " + cartSubtotal);

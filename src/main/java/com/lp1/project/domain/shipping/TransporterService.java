@@ -25,7 +25,7 @@ public class TransporterService {
         }
 
         if (!(validEmail(transporter.getContact()) || validNumberPhone(transporter.getContact()))) {
-            throw new RuntimeException("\nContato inválido.");
+            throw new IllegalArgumentException("\nContato inválido.");
         }
 
         repository.save(transporter);

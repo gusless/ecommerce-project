@@ -17,7 +17,7 @@
       "city": "Natal",
       "neighbor": "Lagoa Nova",
       "street": "São José",
-      "number": "1240",
+      "number": "1204",
       "complement": ""
     },
     "addresses": [
@@ -27,18 +27,25 @@
         "city": "Natal",
         "neighbor": "Lagoa Nova",
         "street": "São José",
-        "number": "1240",
+        "number": "1204",
+        "complement": ""
+      },
+      {
+        "cep": "5933000",
+        "state": "RN",
+        "city": "Jucurutu",
+        "neighbor": "Centro",
+        "street": "Epaminondas",
+        "number": "22",
         "complement": ""
       }
     ],
     "favorites": [],
     "ordersIds": [
-      3,
       1,
-      2,
-      3
+      2
     ],
-    "reviews": [],
+    "reviewsIds": [],
     "id": 2,
     "name": "Maria Eduarda",
     "birth": "2005-08-17",

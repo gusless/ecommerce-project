@@ -16,6 +16,7 @@ public class CustomerMainScreen {
                 case 1 -> NewOrderScreen.show();
                 case 2 -> SeePreviousOrdersScreen.show();
                 case 3 -> SeeOrdersReviewsScreen.show();
+                case 4 -> SettingsScreen.show();
                 case 5 -> App.getSession().logout();
             }
         } catch (Exception e) {

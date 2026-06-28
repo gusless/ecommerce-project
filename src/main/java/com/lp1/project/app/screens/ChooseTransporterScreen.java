@@ -22,7 +22,7 @@ public class ChooseTransporterScreen {
         App.SCANNER.nextLine();
 
         if (op < 1 || op > transporters.size()) {
-            throw new RuntimeException("\nTransportadora inválida.");
+            throw new IllegalArgumentException("\nTransportadora inválida.");
         }
         
         return transporters.get(op - 1);

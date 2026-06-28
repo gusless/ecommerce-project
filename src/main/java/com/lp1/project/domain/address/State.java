@@ -45,6 +45,16 @@ public enum State {
         return name;
     }
 
+    public static State fromString(String value) {
+        try {
+            return State.valueOf(value.toUpperCase());
+        } catch (IllegalArgumentException e) {
+            throw new IllegalArgumentException(
+                    "\nEstado inválido: '" + value + "'. Use siglas válidas como RN, SP, RJ."
+            );
+        }
+    }
+
     @Override
     public String toString() {
         return acronym;

@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Notebook Gamer",
     "description": "Notebook com placa de vídeo dedicada",
-    "stockQuantity": 8,
+    "stockQuantity": 6,
     "price": 5999.90,
     "category": {
       "id": 2,
@@ -18,14 +18,13 @@
     "weight": 2.35,
     "technicalSpecs": "Intel Core i7, 16GB RAM, SSD 1TB, RTX 4060",
     "warrantyMonths": 24,
-    "totalRating": 4.8,
-    "reviews": []
+    "totalRating": 4.8
   },
   {
     "id": 2,
     "name": "Mouse Sem Fio",
     "description": "Mouse óptico ergonômico",
-    "stockQuantity": 46,
+    "stockQuantity": 0,
     "price": 129.90,
     "category": {
       "id": 3,
@@ -40,8 +39,7 @@
     "weight": 0.12,
     "technicalSpecs": "Conexão 2.4GHz, DPI ajustável",
     "warrantyMonths": 12,
-    "totalRating": 4.5,
-    "reviews": []
+    "totalRating": 4.5
   },
   {
     "id": 3,

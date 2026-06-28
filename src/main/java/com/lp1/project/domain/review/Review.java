@@ -1,13 +1,15 @@
 package com.lp1.project.domain.review;
 
+import com.lp1.project.app.App;
 import com.lp1.project.domain.product.Product;
 import com.lp1.project.domain.user.User;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class Review {
     private long id;
-    private User user;
+    private Long userId;
     private Integer stars;
     private Product product;
     private String title;
@@ -16,8 +18,8 @@ public class Review {
 
     private static long idCount = 1;
 
-    public Review(User user, Integer stars, Product product, String title, String comment) {
-        this.user = user;
+    public Review(Long userId, Integer stars, Product product, String title, String comment) {
+        this.userId = userId;
         this.stars = stars;
         this.product = product;
         this.title = title;
@@ -29,12 +31,21 @@ public class Review {
         idCount++;
     }
 
+    public static void synchronizeIdCounter(List<Review> reviews) {
+        long maxId = reviews.stream()
+                .mapToLong(Review::getId)
+                .max()
+                .orElse(0);
+
+        idCount = maxId + 1;
+    }
+
     public long getId() {
         return id;
     }
 
     public User getUser() {
-        return user;
+        return App.getUserRepository().findById(this.userId);
     }
 
     public Integer getStars() {
@@ -55,5 +66,13 @@ public class Review {
 
     public LocalDateTime getDateReview() {
         return dateReview;
+    }
+
+    @Override
+    public String toString() {
+        return "Produto: " + this.product.getName() +
+                " - Preço: R$ " + this.product.getPrice() +
+                "\nTítulo: " + this.title +
+                "\nComentário:\n" + this.comment;
     }
 }

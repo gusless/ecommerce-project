@@ -65,7 +65,7 @@ public class AddCategoryForm {
             int id = App.SCANNER.nextInt();
 
             if(id < 1 || id > categories.size()){
-                throw new RuntimeException("\nCategoria inválida.");
+                throw new IllegalArgumentException("\nCategoria inválida.");
             }
 
             return categories.get(id-1);
@@ -94,7 +94,7 @@ public class AddCategoryForm {
         }
 
         if(id < 1 || id > categories.size()){
-            throw new RuntimeException("\nCategoria inválida.");
+            throw new IllegalArgumentException("\nCategoria inválida.");
         }
 
         return categories.get((int)id-1);

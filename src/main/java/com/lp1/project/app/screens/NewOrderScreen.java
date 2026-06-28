@@ -28,7 +28,7 @@ public class NewOrderScreen {
 
                 while(true) {
                     Product cartProduct = NewOrderForm.product();
-                    if (cartProduct == null) return;
+                    if (cartProduct == null) CustomerMainScreen.show();
 
                     int quantity = NewOrderForm.quantity(cartProduct);
 
@@ -83,7 +83,7 @@ public class NewOrderScreen {
 
                 App.getUserRepository().update();
 
-                return;
+                CustomerMainScreen.show();
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }

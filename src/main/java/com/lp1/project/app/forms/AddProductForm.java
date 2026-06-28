@@ -62,7 +62,7 @@ public class AddProductForm {
         }
 
         if (id < 1 || id > categories.size()) {
-            throw new RuntimeException("\nCategoria inválida.");
+            throw new IllegalArgumentException("\nCategoria inválida.");
         }
 
         return categories.get((int) id-1);

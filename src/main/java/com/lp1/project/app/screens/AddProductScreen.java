@@ -33,7 +33,7 @@ public class AddProductScreen {
 
                 System.out.println("\nProduto criado com sucesso.");
 
-                return;
+                AdminMainScreen.show();
             } catch (Exception e) {
                 System.out.println(e.getMessage());
                 if (App.SCANNER.hasNextLine()) {

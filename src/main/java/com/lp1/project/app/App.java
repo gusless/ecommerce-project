@@ -27,6 +27,7 @@ public class App {
     private static final TransporterService transporterService = new TransporterService(transporterRepository);
     private static final OrderRepository orderRepository = new OrderRepository();
     private static final OrderService orderService = new OrderService(orderRepository);
+    private static final ReviewRepository reviewRepository = new ReviewRepository();
 
     public static UserService getUserService() {
         return userService;
@@ -66,6 +67,10 @@ public class App {
         return orderService;
     }
 
+    public static ReviewRepository getReviewRepository() {
+        return reviewRepository;
+    }
+
     public static void run() {
         createDefaultAdmin(userRepository);
         MainMenuScreen.show();
@@ -81,6 +86,14 @@ public class App {
                     "Admin@123",
                     "84999999999"
             ));
+        }
+    }
+
+    public static void wait3Seconds() {
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
         }
     }
 }

@@ -1,5 +1,6 @@
 package com.lp1.project.domain.user;
 
+import com.lp1.project.app.App;
 import com.lp1.project.domain.address.Address;
 import com.lp1.project.domain.order.Order;
 import com.lp1.project.domain.product.Product;
@@ -16,7 +17,7 @@ public class Customer extends User {
     private List<Address> addresses;
     private Set<Product> favorites;
     private List<Long> ordersIds;
-    private List<Review> reviews;
+    private List<Long> reviewsIds;
 
     public Customer(String name, LocalDate birth, String cpf, String email, String password, String numberPhone) {
         super(name, birth, cpf, email, password, numberPhone);
@@ -24,7 +25,7 @@ public class Customer extends User {
         addresses = new ArrayList<>();
         favorites = new HashSet<>();
         ordersIds = new ArrayList<>();
-        reviews = new ArrayList<>();
+        reviewsIds = new ArrayList<>();
     }
 
     public void addAddress(Address address) {
@@ -39,7 +40,6 @@ public class Customer extends User {
         return principalAddress;
     }
 
-
     public void setPrincipalAddress(Address principalAddress) {
         this.principalAddress = principalAddress;
     }
@@ -52,7 +52,11 @@ public class Customer extends User {
         return favorites;
     }
 
-    public List<Review> getReviews() {
-        return reviews;
+    public void addReview(long reviewId) {
+        reviewsIds.add(reviewId);
+    }
+
+    public List<Long> getReviewsIds() {
+        return reviewsIds;
     }
 }

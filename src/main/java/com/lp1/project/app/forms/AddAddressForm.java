@@ -11,8 +11,8 @@ public class AddAddressForm {
 
     public static State state() {
         System.out.print("Estado (sigla): ");
-        String state = App.SCANNER.nextLine();
-        return State.valueOf(state);
+        String stateString = App.SCANNER.nextLine();
+        return State.fromString(stateString);
     }
 
     public static String city() {

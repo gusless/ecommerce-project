@@ -1,9 +1,11 @@
 package com.lp1.project.domain.product;
 
+import com.lp1.project.app.App;
 import com.lp1.project.domain.category.Category;
 import com.lp1.project.domain.review.Review;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Product {
@@ -18,7 +20,7 @@ public class Product {
     private Integer warrantyMonths;
 
     private Float totalRating;
-    private List<Review> reviews;
+    private List<Long> reviewsIds;
 
     private static long idCount = 1;
 
@@ -34,6 +36,9 @@ public class Product {
         this.technicalSpecs = technicalSpecs;
         this.warrantyMonths = warrantyMonths;
         this.stockQuantity = stockQuantity;
+
+        this.reviewsIds = new ArrayList<>();
+        this.totalRating = 0f;
 
         this.id = idCount;
         idCount++;
@@ -100,8 +105,30 @@ public class Product {
         return totalRating;
     }
 
+    public void addReview(Long reviewId) {
+        reviewsIds.add(reviewId);
+        updateTotalRating();
+    }
+
+    public void updateTotalRating() {
+        List<Review> reviews = getReviews();
+
+        if(reviews.isEmpty()){
+            totalRating = 0f;
+            return;
+        }
+
+        float sum = 0f;
+
+        for (Review review : reviews) {
+            sum += review.getStars();
+        }
+
+        totalRating = sum / reviews.size();
+    }
+
     public List<Review> getReviews() {
-        return reviews;
+        return App.getReviewRepository().findByProduct(this.id);
     }
 
     public Integer getWarrantyMonths() {

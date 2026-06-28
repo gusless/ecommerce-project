@@ -14,15 +14,19 @@ public class NewOrderForm {
             System.out.println(product.getId() + " - " + product.getName() + " - R$ " + product.getPrice());
         }
 
-        System.out.print("\nEscolha o produto para adicionar no carrinho (ID): ");
+        System.out.print("\nEscolha o produto para adicionar no carrinho (ID) ou 0 para cancelar: ");
         int id = App.SCANNER.nextInt();
         App.SCANNER.nextLine();
 
-        if (id < 1 || id > products.size()) {
-            throw new RuntimeException("\nProduto inválido.");
+        if (id == 0) {
+            return null;
         }
 
-        return products.get(id-1);
+        return products.stream()
+                .filter(p -> p.getId() == id)
+                .findFirst()
+                .orElseThrow(() ->
+                        new IllegalArgumentException("\nProduto inválido."));
     }
 
     public static Integer quantity(Product product) {

@@ -8,28 +8,35 @@ import com.lp1.project.domain.repository.UserRepository;
 import com.lp1.project.domain.user.Customer;
 
 public class AddAddressScreen {
-    private static final UserRepository repository = App.getUserRepository();
     public static void show(){
-        System.out.println("\n=====NOVO ENDEREÇO=====");
+        while(true){
+            try {
+                System.out.println("\n=====NOVO ENDEREÇO=====");
 
-        Customer user = (Customer) App.getSession().getCurrentUser();
+                Customer user = (Customer) App.getSession().getCurrentUser();
 
-        String cep = AddAddressForm.cep();
-        State state = AddAddressForm.state();
-        String city = AddAddressForm.city();
-        String neighborhood = AddAddressForm.neighborhood();
-        String street = AddAddressForm.street();
-        String number = AddAddressForm.number();
-        String complement = AddAddressForm.complement();
+                String cep = AddAddressForm.cep();
+                State state = AddAddressForm.state();
+                String city = AddAddressForm.city();
+                String neighborhood = AddAddressForm.neighborhood();
+                String street = AddAddressForm.street();
+                String number = AddAddressForm.number();
+                String complement = AddAddressForm.complement();
 
-        Address newAddress = new Address(cep, state, city, neighborhood, street, number, complement);
+                Address newAddress = new Address(cep, state, city, neighborhood, street, number, complement);
 
-        if (user.getPrincipalAddress() == null) {
-            user.setPrincipalAddress(newAddress);
+                if (user.getPrincipalAddress() == null) {
+                    user.setPrincipalAddress(newAddress);
+                }
+
+                user.addAddress(newAddress);
+
+                App.getUserRepository().update();
+
+                CustomerMainScreen.show();
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
         }
-
-        user.addAddress(newAddress);
-
-        repository.update();
     }
 }
