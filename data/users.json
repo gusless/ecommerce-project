@@ -29,22 +29,10 @@
         "street": "São José",
         "number": "1204",
         "complement": ""
-      },
-      {
-        "cep": "5933000",
-        "state": "RN",
-        "city": "Jucurutu",
-        "neighbor": "Centro",
-        "street": "Epaminondas",
-        "number": "22",
-        "complement": ""
       }
     ],
     "favorites": [],
-    "ordersIds": [
-      1,
-      2
-    ],
+    "ordersIds": [],
     "reviewsIds": [],
     "id": 2,
     "name": "Maria Eduarda",

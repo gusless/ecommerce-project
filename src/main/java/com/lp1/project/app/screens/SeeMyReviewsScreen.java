@@ -2,11 +2,10 @@ package com.lp1.project.app.screens;
 
 import com.lp1.project.app.App;
 import com.lp1.project.domain.review.Review;
-import com.lp1.project.domain.user.Customer;
 
 import java.util.List;
 
-public class SeeOrdersReviewsScreen {
+public class SeeMyReviewsScreen {
     public static void show() {
         System.out.println("\n=====REVIEWS=====");
         List<Review> reviews = App.getReviewRepository().findByUser(App.getSession().getCurrentUser());

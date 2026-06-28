@@ -18,7 +18,10 @@ public class AdminMainScreen {
                     case 1 -> AddProductScreen.show();
                     case 2 -> AddCategoryScreen.show();
                     case 3 -> AddTransporterScreen.show();
-                    case 7 -> App.getSession().logout();
+                    case 7 -> {
+                        App.getSession().logout();
+                        MainMenuScreen.show();
+                    }
 
                     default -> System.out.println("\nOpção inválida. Tente novamente.");
                 }

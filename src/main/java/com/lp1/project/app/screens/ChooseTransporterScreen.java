@@ -7,12 +7,14 @@ import java.util.List;
 
 public class ChooseTransporterScreen {
     public static Transporter show() {
+        System.out.println("\n=====TRANSPORTADORA=====");
         List<Transporter> transporters = App.getTransporterRepository().findAll();
 
         if (transporters.isEmpty()){
             throw new RuntimeException("\nNenhuma transportadora encontrada, desculpe.");
         }
 
+        System.out.println("Transportadoras:");
         for (Transporter transporter : transporters) {
             System.out.println(transporter.getId() + " - " + transporter.getName());
         }

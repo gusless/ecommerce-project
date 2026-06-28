@@ -62,6 +62,12 @@ public class ProductRepository extends JsonRepository<Product> {
                 .toList();
     }
 
+    public List<Product> findByAtLeastOneReview() {
+        return items.stream()
+                .filter(p -> p.getReviews() != null && !p.getReviews().isEmpty())
+                .toList();
+    }
+
     private boolean verifyCategory(Product product, Category category){
         Category current = product.getCategory();
         while (current != null){

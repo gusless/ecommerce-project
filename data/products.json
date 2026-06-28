@@ -60,5 +60,27 @@
     "weight": 0.95,
     "technicalSpecs": "Switches Blue, conexão USB-C, iluminação RGB personalizável, layout ABNT2",
     "warrantyMonths": 12
+  },
+  {
+    "id": 4,
+    "name": "Monitor 4k 144Hz",
+    "description": "Monitor com resolução 4k e taxa de atualizçação de 144Hz",
+    "stockQuantity": 20,
+    "price": 1239.90,
+    "category": {
+      "id": 3,
+      "name": "Periféricos",
+      "description": "Mouse, teclado e acessórios",
+      "parentCategory": {
+        "id": 1,
+        "name": "Eletrônicos",
+        "description": "Produtos eletrônicos em geral"
+      }
+    },
+    "weight": 5.2,
+    "technicalSpecs": "Tela TN, entrada Display Port e HDMI, parafusação VESA",
+    "warrantyMonths": 12,
+    "totalRating": 0.0,
+    "reviewsIds": []
   }
 ]
