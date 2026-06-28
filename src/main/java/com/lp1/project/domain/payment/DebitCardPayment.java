@@ -16,7 +16,12 @@ public class DebitCardPayment extends PaymentMethod {
 
     @Override
     public boolean processPayment(BigDecimal value) {
-        System.out.println("Pagamento no débito de R$" + value);
+        System.out.println("\nPagamento no débito de R$" + value);
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Cartão de Débito";
     }
 }

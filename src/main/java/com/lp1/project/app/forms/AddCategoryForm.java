@@ -9,7 +9,7 @@ import java.util.List;
 
 public class AddCategoryForm {
     public static String name() {
-        System.out.println("Nome da categoria: ");
+        System.out.print("Nome da categoria: ");
         return App.SCANNER.nextLine();
     }
 
@@ -21,14 +21,12 @@ public class AddCategoryForm {
     public static Category parentCategory() {
         List<Category> categories = App.getCategoryRepository().findAll();
 
-        System.out.println("A categoria é uma categoria pai?\n1. Sim\n2. Não");
-        System.out.print(": ");
+        System.out.print("A categoria é uma categoria pai?\n1. Sim\n2. Não\n: ");
 
         int op = App.SCANNER.nextInt();
 
         while(op != 1 && op != 2){
-            System.out.println("Opcão inválida. Tente novamente.");
-            System.out.print(": ");
+            System.out.print("\nOpcão inválida. Tente novamente.\n: ");
             op = App.SCANNER.nextInt();
         }
         App.SCANNER.nextLine();
@@ -40,14 +38,12 @@ public class AddCategoryForm {
         System.out.println("Adicionar categoria pai:");
         if(categories.isEmpty()){
             System.out.println("\nNenhuma categoria encontrada");
-            System.out.println("1. Criar categoria pai\n2. Transformar essa categoria em categoria pai");
-            System.out.print(": ");
+            System.out.print("1. Criar categoria pai\n2. Transformar essa categoria em categoria pai\n: ");
 
             op = App.SCANNER.nextInt();
 
             while(op != 1 && op != 2){
-                System.out.println("Opção inválida. Tente novamente");
-                System.out.print(": ");
+                System.out.println("\nOpção inválida. Tente novamente\n: ");
                 op = App.SCANNER.nextInt();
             }
             App.SCANNER.nextLine();
@@ -59,30 +55,28 @@ public class AddCategoryForm {
             AddCategoryScreen.show();
 
             categories = App.getCategoryRepository().findAll();
-            System.out.println("Categorias:");
+            System.out.println("\nCategorias:");
             for(Category category : categories){
                 System.out.println(category.getId() + " - " + category.getName());
             }
 
-            System.out.println("\nEscolha a categoria pai (ID):");
-            System.out.print(": ");
+            System.out.print("\nEscolha a categoria pai (ID): ");
 
             int id = App.SCANNER.nextInt();
 
             if(id < 1 || id > categories.size()){
-                throw new RuntimeException("Categoria inválida");
+                throw new RuntimeException("\nCategoria inválida.");
             }
 
             return categories.get(id-1);
         }
 
-        System.out.println("Categorias: ");
+        System.out.println("\nCategorias: ");
         for(Category category : categories){
             System.out.println(category.getId() + " - " + category.getName());
         }
 
-        System.out.println("\nEscolha a categoria pai (ID) ou crie uma nova categoria pai (0):");
-        System.out.print(": ");
+        System.out.print("\nEscolha a categoria pai (ID) ou crie uma nova categoria pai (0): ");
 
         long id = App.SCANNER.nextInt();
         App.SCANNER.nextLine();

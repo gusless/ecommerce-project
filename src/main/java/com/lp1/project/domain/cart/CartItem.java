@@ -7,11 +7,14 @@ import java.math.BigDecimal;
 public class CartItem {
     private Product product;
     private Integer quantity;
+    private Float weight;
     private BigDecimal subtotal;
 
     public CartItem(Product product, Integer quantity) {
         this.product = product;
         this.quantity = quantity;
+
+        weight = product.getWeight() * quantity;
 
         subtotal = product.getPrice().multiply(BigDecimal.valueOf(quantity));
     }
@@ -32,6 +35,10 @@ public class CartItem {
 
     public BigDecimal getSubtotal() {
         return subtotal;
+    }
+
+    public Float getWeight() {
+        return weight;
     }
 
     public void setProduct(Product product) {

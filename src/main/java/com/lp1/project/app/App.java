@@ -54,6 +54,10 @@ public class App {
         return transporterService;
     }
 
+    public static TransporterRepository getTransporterRepository() {
+        return transporterRepository;
+    }
+
     public static OrderRepository getOrderRepository() {
         return orderRepository;
     }

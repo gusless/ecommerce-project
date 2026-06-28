@@ -26,8 +26,8 @@ public class OrderRepository extends JsonRepository<Order> {
 
     public List<Order> findOrdersByCustomer(User customer){
         return items.stream()
-                .filter(t -> t.getCustomer() != null
-                        && t.getCustomer().equals(customer))
+                .filter(t -> t.getCustomerId() != null
+                        && t.getCustomerId().equals(customer.getId()))
                 .toList();
     }
 

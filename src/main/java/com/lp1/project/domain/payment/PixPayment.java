@@ -15,7 +15,7 @@ public class PixPayment extends PaymentMethod {
 
     @Override
     public boolean processPayment(BigDecimal value) {
-        System.out.println("Pagamento no PIX de R$" + value);
+        System.out.println("\nPagamento no PIX de R$" + value);
         return true;
     }
 
@@ -24,13 +24,14 @@ public class PixPayment extends PaymentMethod {
         StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < 20; i++){
-            sb.append(RANDOM.nextInt(i));
+            sb.append(RANDOM.nextInt(10));
         }
         sb.append("PIXCODE");
         for (int i = 0; i < 10; i++){
-            sb.append(RANDOM.nextInt(i));
+            sb.append(RANDOM.nextInt(10));
         }
 
+        this.pixKey = sb.toString();
         //gambiarra
     }
 
@@ -38,4 +39,8 @@ public class PixPayment extends PaymentMethod {
         return pixKey;
     }
 
+    @Override
+    public String toString() {
+        return "Pix";
+    }
 }

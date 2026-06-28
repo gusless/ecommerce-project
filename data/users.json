@@ -11,9 +11,33 @@
   },
   {
     "_type": "CUSTOMER",
-    "addresses": [],
+    "principalAddress": {
+      "cep": "59063-150",
+      "state": "RN",
+      "city": "Natal",
+      "neighbor": "Lagoa Nova",
+      "street": "São José",
+      "number": "1240",
+      "complement": ""
+    },
+    "addresses": [
+      {
+        "cep": "59063-150",
+        "state": "RN",
+        "city": "Natal",
+        "neighbor": "Lagoa Nova",
+        "street": "São José",
+        "number": "1240",
+        "complement": ""
+      }
+    ],
     "favorites": [],
-    "orders": [],
+    "ordersIds": [
+      3,
+      1,
+      2,
+      3
+    ],
     "reviews": [],
     "id": 2,
     "name": "Maria Eduarda",

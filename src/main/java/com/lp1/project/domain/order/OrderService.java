@@ -1,8 +1,10 @@
 package com.lp1.project.domain.order;
 
+import com.lp1.project.app.App;
 import com.lp1.project.domain.address.Address;
 import com.lp1.project.domain.cart.Cart;
 import com.lp1.project.domain.payment.*;
+import com.lp1.project.domain.product.Product;
 import com.lp1.project.domain.repository.OrderRepository;
 import com.lp1.project.domain.shipping.Shipping;
 import com.lp1.project.domain.user.Customer;
@@ -31,10 +33,12 @@ public class OrderService {
                 paymentMethod
         );
 
-        return new Order(customer, paymentMethod, address,
-                convertItems(cart), totalValue,
+        Order order = new Order(customer.getId(), paymentMethod, address, convertItems(cart), totalValue,
                 OrderSituation.ORDER_RECEIVED, shipping);
 
+        repository.save(order);
+
+        return order;
     }
 
     private BigDecimal calculateTotalValue(
@@ -89,7 +93,18 @@ public class OrderService {
                 .processPayment(order.getTotalValue());
         if (success){
             order.setSituation(OrderSituation.PAID);
+
+            for(OrderItem item : order.getItems()){
+                Product product = item.getProduct();
+
+                product.decreaseStockQuantity(item.getQuantity());
+            }
+
+            repository.update();
+            App.getProductRepository().update();
         }
+
+
         return success;
     }
 

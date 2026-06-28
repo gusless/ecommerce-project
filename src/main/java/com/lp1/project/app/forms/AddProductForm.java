@@ -10,7 +10,7 @@ import java.util.List;
 
 public class AddProductForm {
     public static String name() {
-        System.out.println("Nome do produto: ");
+        System.out.print("Nome do produto: ");
         return App.SCANNER.nextLine();
     }
 
@@ -20,12 +20,12 @@ public class AddProductForm {
     }
 
     public static Integer stockQuantity() {
-        System.out.println("Quantidade em estoque: ");
+        System.out.print("Quantidade em estoque: ");
         return App.SCANNER.nextInt();
     }
 
     public static BigDecimal price() {
-        System.out.println("Preço unitário: ");
+        System.out.print("Preço unitário: ");
         return App.SCANNER.nextBigDecimal();
     }
 
@@ -37,15 +37,14 @@ public class AddProductForm {
             System.out.println("\nNenhuma categoria foi encontrada, adicione uma nova:");
             AddCategoryScreen.show();
         }
-        System.out.println("Categorias:");
+        System.out.println("\nCategorias:");
 
         categories = App.getCategoryRepository().findAll();
         for (Category category : categories) {
             System.out.println(category.getId() + " - " + category.getName());
         }
 
-        System.out.println("Escolha uma categoria (ID) ou crie uma nova categoria (0):");
-        System.out.print(": ");
+        System.out.print("Escolha uma categoria (ID) ou crie uma nova categoria (0): ");
 
         long id = App.SCANNER.nextLong();
         App.SCANNER.nextLine();
@@ -63,14 +62,14 @@ public class AddProductForm {
         }
 
         if (id < 1 || id > categories.size()) {
-            throw new RuntimeException("Categoria inválida");
+            throw new RuntimeException("\nCategoria inválida.");
         }
 
         return categories.get((int) id-1);
     }
 
     public static Float weight() {
-        System.out.println("Peso do produto: ");
+        System.out.print("Peso do produto: ");
         return App.SCANNER.nextFloat();
     }
 
@@ -80,7 +79,7 @@ public class AddProductForm {
     }
 
     public static Integer warrantyMonths() {
-        System.out.println("Meses de garantia: ");
+        System.out.print("Meses de garantia: ");
         return App.SCANNER.nextInt();
     }
 }

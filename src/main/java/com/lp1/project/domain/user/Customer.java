@@ -15,7 +15,7 @@ public class Customer extends User {
     private Address principalAddress;
     private List<Address> addresses;
     private Set<Product> favorites;
-    private List<Order> orders;
+    private List<Long> ordersIds;
     private List<Review> reviews;
 
     public Customer(String name, LocalDate birth, String cpf, String email, String password, String numberPhone) {
@@ -23,12 +23,16 @@ public class Customer extends User {
 
         addresses = new ArrayList<>();
         favorites = new HashSet<>();
-        orders = new ArrayList<>();
+        ordersIds = new ArrayList<>();
         reviews = new ArrayList<>();
     }
 
     public void addAddress(Address address) {
         addresses.add(address);
+    }
+
+    public void addOrder(Long orderId) {
+        ordersIds.add(orderId);
     }
 
     public Address getPrincipalAddress() {
@@ -46,10 +50,6 @@ public class Customer extends User {
 
     public Set<Product> getFavorites() {
         return favorites;
-    }
-
-    public List<Order> getOrders() {
-        return orders;
     }
 
     public List<Review> getReviews() {

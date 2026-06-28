@@ -2,6 +2,7 @@ package com.lp1.project.config;
 
 import com.google.gson.*;
 import com.google.gson.typeadapters.RuntimeTypeAdapterFactory;
+import com.lp1.project.domain.payment.*;
 import com.lp1.project.domain.user.*;
 
 import java.time.LocalDate;
@@ -15,6 +16,14 @@ public class GsonConfig {
                 .registerSubtype(Customer.class, "CUSTOMER")
                 .registerSubtype(Admin.class, "ADMIN");
 
+        RuntimeTypeAdapterFactory<PaymentMethod> paymentAdapter =
+                RuntimeTypeAdapterFactory
+                        .of(PaymentMethod.class, "_type")
+                        .registerSubtype(PixPayment.class, "PIX")
+                        .registerSubtype(BankSlipPayment.class, "BOLETO")
+                        .registerSubtype(CreditCardPayment.class, "CREDIT")
+                        .registerSubtype(DebitCardPayment.class, "DEBIT");
+
         return new GsonBuilder()
                 .registerTypeAdapter(
                         LocalDate.class,
@@ -25,6 +34,7 @@ public class GsonConfig {
                         new LocalDateTimeAdapter()
                 )
                 .registerTypeAdapterFactory(userAdapter)
+                .registerTypeAdapterFactory(paymentAdapter)
                 .setPrettyPrinting()
                 .create();
         }

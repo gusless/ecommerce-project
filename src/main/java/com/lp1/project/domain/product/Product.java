@@ -76,6 +76,14 @@ public class Product {
         return stockQuantity;
     }
 
+    public void decreaseStockQuantity(Integer quantity) {
+        if (quantity > stockQuantity) {
+            throw new RuntimeException("\nEstoque insuficiente do produto " + name);
+        }
+
+        this.stockQuantity -= quantity;
+    }
+
     public BigDecimal getPrice() {
         return price;
     }

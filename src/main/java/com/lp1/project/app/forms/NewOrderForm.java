@@ -9,11 +9,12 @@ public class NewOrderForm {
     public static Product product() {
         List<Product> products = App.getProductRepository().findProductsInStock();
 
+        System.out.println("Produtos:");
         for (Product product : products) {
-            System.out.println(product.getId() + " - " + product.getName());
+            System.out.println(product.getId() + " - " + product.getName() + " - R$ " + product.getPrice());
         }
 
-        System.out.print("Escolha o produto para adicionar no carrinho (ID): ");
+        System.out.print("\nEscolha o produto para adicionar no carrinho (ID): ");
         int id = App.SCANNER.nextInt();
         App.SCANNER.nextLine();
 
@@ -26,7 +27,7 @@ public class NewOrderForm {
 
     public static Integer quantity(Product product) {
         System.out.println(product);
-        System.out.print("Escolha a quantidade ou 0 caso queira escolher outro produto: ");
+        System.out.print("\nEscolha a quantidade ou 0 caso queira escolher outro produto: ");
 
         return App.SCANNER.nextInt();
     }

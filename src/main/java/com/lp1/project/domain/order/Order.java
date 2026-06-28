@@ -1,5 +1,6 @@
 package com.lp1.project.domain.order;
 
+import com.lp1.project.app.App;
 import com.lp1.project.domain.address.Address;
 import com.lp1.project.domain.payment.PaymentMethod;
 import com.lp1.project.domain.product.Product;
@@ -14,7 +15,7 @@ import java.util.List;
 
 public class Order {
     private long id;
-    private Customer customer;
+    private Long customerId;
     private PaymentMethod paymentMethod;
     private Address address;
     private List<OrderItem> items;
@@ -26,9 +27,9 @@ public class Order {
 
     private static long idCount = 1;
 
-    public Order(Customer customer, PaymentMethod paymentMethod, Address address, List<OrderItem> items,
+    public Order(Long customerId, PaymentMethod paymentMethod, Address address, List<OrderItem> items,
           BigDecimal totalValue, OrderSituation situation, Shipping shipping){
-        this.customer = customer;
+        this.customerId = customerId;
         this.paymentMethod = paymentMethod;
         this.address = address;
         this.items = items;
@@ -41,8 +42,6 @@ public class Order {
         this.id = idCount;
         idCount++;
 
-        System.out.println("Pedido nº" + this.id + " criado em " +
-                dateTimePurchase.format(DateTimeFormatter.ofPattern("HH:mm:ss dd/MM/yyyy")));
     }
 
     @Override
@@ -50,10 +49,10 @@ public class Order {
 
         return "Pedido " + id + " - "
                 + dateTimePurchase.format(DateTimeFormatter.ofPattern("HH:mm:ss dd/MM/yyyy")) +
-                "\nCliente: " + customer.getName() +
+                "\nCliente: " + App.getUserRepository().findById(customerId).getName() +
                 "\nMétodo de pagamento: " + paymentMethod +
                 "\nProdutos:\n" + items +
-                "\nTransportadora: " + shipping.getTransporter() +
+                "\nTransportadora:\n" + shipping.getTransporter() +
                 " - Frete: R$" + shipping.getShippingValue() +
                 "\nTotal: R$" + totalValue +
                 "\nSituação: " + situation.getSituation() +
@@ -77,8 +76,8 @@ public class Order {
         return id;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public Long getCustomerId() {
+        return customerId;
     }
 
     public Shipping getShipping() {

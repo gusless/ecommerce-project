@@ -13,8 +13,12 @@ public class BankSlipPayment extends PaymentMethod {
     private static final Random RANDOM = new Random();
 
     public BankSlipPayment() {
+    }
+
+    public void generate() {
         generateBarcode();
         dueDate = LocalDate.now().plusDays(3);
+
         System.out.println("Código de barras: " + barcode);
         System.out.println("Vencimento: "
                 + dueDate.format(DateTimeFormatter.ofPattern("dd/MM/yy")));
@@ -22,7 +26,7 @@ public class BankSlipPayment extends PaymentMethod {
 
     @Override
     public boolean processPayment(BigDecimal value) {
-        System.out.println("Pagamento no boleto de R$" + value);
+        System.out.println("\nPagamento no boleto de R$" + value);
         return true;
     }
 
@@ -31,11 +35,16 @@ public class BankSlipPayment extends PaymentMethod {
         StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < 44; i++){
-            sb.append(RANDOM.nextInt(i));
+            sb.append(RANDOM.nextInt(10));
         }
         barcode = sb.toString();
 
         //gambiarra
+    }
+
+    @Override
+    public String toString() {
+        return "Boleto Bancário\n";
     }
 
     public String getBarcode() {
