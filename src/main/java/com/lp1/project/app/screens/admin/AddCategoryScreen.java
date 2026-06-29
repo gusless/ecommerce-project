@@ -20,8 +20,6 @@ public class AddCategoryScreen {
 
             System.out.println("\nCategoria criada com sucesso.");
 
-            AdminMainScreen.show();
-
         } catch (Exception e) {
             System.out.println(e.getMessage());
             if (App.SCANNER.hasNextLine()) {
