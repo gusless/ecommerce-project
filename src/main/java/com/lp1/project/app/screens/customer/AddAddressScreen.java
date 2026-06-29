@@ -1,10 +1,9 @@
-package com.lp1.project.app.screens;
+package com.lp1.project.app.screens.customer;
 
 import com.lp1.project.app.App;
 import com.lp1.project.app.forms.AddAddressForm;
 import com.lp1.project.domain.address.Address;
 import com.lp1.project.domain.address.State;
-import com.lp1.project.domain.repository.UserRepository;
 import com.lp1.project.domain.user.Customer;
 
 public class AddAddressScreen {

@@ -1,6 +1,8 @@
 package com.lp1.project.app.screens;
 
 import com.lp1.project.app.App;
+import com.lp1.project.app.screens.admin.AdminMainScreen;
+import com.lp1.project.app.screens.customer.CustomerMainScreen;
 import com.lp1.project.domain.user.Admin;
 import com.lp1.project.domain.user.User;
 

@@ -24,7 +24,7 @@
     "id": 2,
     "name": "Mouse Sem Fio",
     "description": "Mouse óptico ergonômico",
-    "stockQuantity": 0,
+    "stockQuantity": 12,
     "price": 129.90,
     "category": {
       "id": 3,
@@ -45,7 +45,7 @@
     "id": 3,
     "name": "Teclado M�ecânico RGB",
     "description": "Teclado mecânico com iluminação RGB e switches azuis",
-    "stockQuantity": 29,
+    "stockQuantity": 53,
     "price": 349.90,
     "category": {
       "id": 3,

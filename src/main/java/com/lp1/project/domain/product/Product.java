@@ -127,6 +127,10 @@ public class Product {
         totalRating = sum / reviews.size();
     }
 
+    public void addStock(Integer value) {
+        this.stockQuantity += value;
+    }
+
     public List<Review> getReviews() {
         return App.getReviewRepository().findByProduct(this.id);
     }

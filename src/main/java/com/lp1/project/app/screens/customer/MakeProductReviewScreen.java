@@ -1,11 +1,9 @@
-package com.lp1.project.app.screens;
+package com.lp1.project.app.screens.customer;
 
 import com.lp1.project.app.App;
 import com.lp1.project.domain.order.Order;
 import com.lp1.project.domain.order.OrderItem;
 import com.lp1.project.domain.product.Product;
-import com.lp1.project.domain.repository.ReviewRepository;
-import com.lp1.project.domain.review.Review;
 import com.lp1.project.domain.user.Customer;
 
 import java.util.HashSet;

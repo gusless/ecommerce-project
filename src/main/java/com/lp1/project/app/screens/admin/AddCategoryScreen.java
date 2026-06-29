@@ -1,4 +1,4 @@
-package com.lp1.project.app.screens;
+package com.lp1.project.app.screens.admin;
 
 import com.lp1.project.app.App;
 import com.lp1.project.app.forms.AddCategoryForm;
