@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Notebook Gamer",
     "description": "Notebook com placa de vídeo dedicada",
-    "stockQuantity": 6,
+    "stockQuantity": 16,
     "price": 5999.90,
     "category": {
       "id": 2,
@@ -24,7 +24,7 @@
     "id": 2,
     "name": "Mouse Sem Fio",
     "description": "Mouse óptico ergonômico",
-    "stockQuantity": 12,
+    "stockQuantity": 11,
     "price": 129.90,
     "category": {
       "id": 3,
@@ -45,7 +45,7 @@
     "id": 3,
     "name": "Teclado M�ecânico RGB",
     "description": "Teclado mecânico com iluminação RGB e switches azuis",
-    "stockQuantity": 53,
+    "stockQuantity": 52,
     "price": 349.90,
     "category": {
       "id": 3,
@@ -65,7 +65,7 @@
     "id": 4,
     "name": "Monitor 4k 144Hz",
     "description": "Monitor com resolução 4k e taxa de atualizçação de 144Hz",
-    "stockQuantity": 20,
+    "stockQuantity": 18,
     "price": 1239.90,
     "category": {
       "id": 3,
@@ -80,6 +80,30 @@
     "weight": 5.2,
     "technicalSpecs": "Tela TN, entrada Display Port e HDMI, parafusação VESA",
     "warrantyMonths": 12,
+    "totalRating": 4.0,
+    "reviewsIds": [
+      1
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Mouse Redragon King Cobra",
+    "description": "Mouse RGB 16000dpi 1ms sensor Pixart 3360",
+    "stockQuantity": 200,
+    "price": 249.99,
+    "category": {
+      "id": 3,
+      "name": "Periféricos",
+      "description": "Mouse, teclado e acessórios",
+      "parentCategory": {
+        "id": 1,
+        "name": "Eletrônicos",
+        "description": "Produtos eletrônicos em geral"
+      }
+    },
+    "weight": 0.24,
+    "technicalSpecs": "Mouse RGB 16000dpi 1ms sensor Pixart 3360",
+    "warrantyMonths": 6,
     "totalRating": 0.0,
     "reviewsIds": []
   }

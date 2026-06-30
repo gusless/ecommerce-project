@@ -32,7 +32,8 @@ public class AddAddressScreen {
 
                 App.getUserRepository().update();
 
-                CustomerMainScreen.show();
+                return;
+                //CustomerMainScreen.show();
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }

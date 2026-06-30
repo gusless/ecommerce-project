@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "userId": 4,
+    "stars": 4,
+    "product": {
+      "id": 4,
+      "name": "Monitor 4k 144Hz",
+      "description": "Monitor com resolução 4k e taxa de atualizçação de 144Hz",
+      "stockQuantity": 18,
+      "price": 1239.90,
+      "category": {
+        "id": 3,
+        "name": "Periféricos",
+        "description": "Mouse, teclado e acessórios",
+        "parentCategory": {
+          "id": 1,
+          "name": "Eletrônicos",
+          "description": "Produtos eletrônicos em geral"
+        }
+      },
+      "weight": 5.2,
+      "technicalSpecs": "Tela TN, entrada Display Port e HDMI, parafusação VESA",
+      "warrantyMonths": 12,
+      "totalRating": 0.0,
+      "reviewsIds": []
+    },
+    "title": "Bom dms",
+    "comment": "muito bom, pena q a entrega demorou",
+    "dateReview": "2026-06-29T21:48:22.281637300"
+  }
+]

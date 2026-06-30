@@ -2,8 +2,7 @@
   {
     "id": 1,
     "name": "Eletrônicos",
-    "description": "Produtos eletrônicos em geral",
-    "parentCategory": null
+    "description": "Produtos eletrônicos em geral"
   },
   {
     "id": 2,
@@ -12,8 +11,7 @@
     "parentCategory": {
       "id": 1,
       "name": "Eletrônicos",
-      "description": "Produtos eletrônicos em geral",
-      "parentCategory": null
+      "description": "Produtos eletrônicos em geral"
     }
   },
   {
@@ -23,8 +21,27 @@
     "parentCategory": {
       "id": 1,
       "name": "Eletrônicos",
-      "description": "Produtos eletrônicos em geral",
-      "parentCategory": null
+      "description": "Produtos eletrônicos em geral"
+    }
+  },
+  {
+    "id": 4,
+    "name": "CPU",
+    "description": "Processadores desktop",
+    "parentCategory": {
+      "id": 5,
+      "name": "Hardware",
+      "description": "Peças para computadores em geral"
+    }
+  },
+  {
+    "id": 5,
+    "name": "Hardware",
+    "description": "Peças para computadores em geral",
+    "parentCategory": {
+      "id": 1,
+      "name": "Eletrônicos",
+      "description": "Produtos eletrônicos em geral"
     }
   }
 ]

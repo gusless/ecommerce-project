@@ -15,11 +15,12 @@ public class ChooseAddressScreen {
         if (addresses.isEmpty()) {
             System.out.println("\nNenhum endereço cadastrado.\nCadastre um novo:");
             AddAddressScreen.show();
+            return show();
         }
 
         System.out.println("\nEndereços:");
         for (int i = 0; i<addresses.size();i++){
-            System.out.println(i+1 + ". " + addresses.get(i));
+            System.out.println(i+1 + ".\n" + addresses.get(i));
         }
 
         System.out.print("Escolha o endereço ou aperte 0 para adicionar um novo: ");
@@ -28,6 +29,7 @@ public class ChooseAddressScreen {
 
         if (op == 0){
             AddAddressScreen.show();
+            return show();
         } else if(op < 1 || op > addresses.size()){
             throw new IllegalArgumentException("\nEndereço inválido.");
         }

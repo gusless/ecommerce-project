@@ -41,5 +41,119 @@
     "email": "eduarda@gmail.com",
     "password": "mJ14569!@fh",
     "numberPhone": "84987562130"
+  },
+  {
+    "_type": "CUSTOMER",
+    "principalAddress": {
+      "cep": "59111000",
+      "state": "RN",
+      "city": "Natal",
+      "neighbor": "Lagoa Nova",
+      "street": "Rua nao sei",
+      "number": "6666",
+      "complement": ""
+    },
+    "addresses": [
+      {
+        "cep": "59111000",
+        "state": "RN",
+        "city": "Natal",
+        "neighbor": "Lagoa Nova",
+        "street": "Rua nao sei",
+        "number": "6666",
+        "complement": ""
+      }
+    ],
+    "favorites": [],
+    "ordersIds": [
+      1
+    ],
+    "reviewsIds": [],
+    "id": 3,
+    "name": "Augusto",
+    "birth": "2000-01-01",
+    "cpf": "11122233344",
+    "email": "augusto@gmail.com",
+    "password": "Aa@12345678",
+    "numberPhone": "84911112222"
+  },
+  {
+    "_type": "CUSTOMER",
+    "principalAddress": {
+      "cep": "59111000",
+      "state": "RN",
+      "city": "Natal",
+      "neighbor": "Neopolis",
+      "street": "Avenida Nenhuma",
+      "number": "67",
+      "complement": ""
+    },
+    "addresses": [
+      {
+        "cep": "59111000",
+        "state": "RN",
+        "city": "Natal",
+        "neighbor": "Neopolis",
+        "street": "Avenida Nenhuma",
+        "number": "67",
+        "complement": ""
+      },
+      {
+        "cep": "59111000",
+        "state": "RN",
+        "city": "Sao Jose de Mipibu",
+        "neighbor": "Centro",
+        "street": "Rua Desgraça",
+        "number": "666777",
+        "complement": ""
+      }
+    ],
+    "favorites": [],
+    "ordersIds": [
+      2
+    ],
+    "reviewsIds": [
+      1
+    ],
+    "id": 4,
+    "name": "Zé",
+    "birth": "1980-10-10",
+    "cpf": "99988833323",
+    "email": "ze@gmail.com",
+    "password": "Ze@1234567",
+    "numberPhone": "84999992222"
+  },
+  {
+    "_type": "CUSTOMER",
+    "principalAddress": {
+      "cep": "59222000",
+      "state": "RN",
+      "city": "Natal",
+      "neighbor": "Cidade Jardim",
+      "street": "Rua das Mangas",
+      "number": "6767",
+      "complement": ""
+    },
+    "addresses": [
+      {
+        "cep": "59222000",
+        "state": "RN",
+        "city": "Natal",
+        "neighbor": "Cidade Jardim",
+        "street": "Rua das Mangas",
+        "number": "6767",
+        "complement": ""
+      }
+    ],
+    "favorites": [],
+    "ordersIds": [],
+    "reviewsIds": [],
+    "id": 5,
+    "name": "Jao",
+    "birth": "1970-02-02",
+    "cpf": "44455566632",
+    "email": "jao@gmail.com",
+    "password": "Jao@12345678",
+    "numberPhone": "84944442222"
   }
 ]

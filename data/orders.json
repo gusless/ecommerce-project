@@ -1,0 +1,168 @@
+[
+  {
+    "id": 1,
+    "customerId": 3,
+    "paymentMethod": {
+      "_type": "PIX",
+      "pixKey": "98825193340454935125PIXCODE5260854255"
+    },
+    "address": {
+      "cep": "59111000",
+      "state": "RN",
+      "city": "Natal",
+      "neighbor": "Lagoa Nova",
+      "street": "Rua nao sei",
+      "number": "6666",
+      "complement": ""
+    },
+    "items": [
+      {
+        "product": {
+          "id": 2,
+          "name": "Mouse Sem Fio",
+          "description": "Mouse óptico ergonômico",
+          "stockQuantity": 11,
+          "price": 129.90,
+          "category": {
+            "id": 3,
+            "name": "Periféricos",
+            "description": "Mouse, teclado e acessórios",
+            "parentCategory": {
+              "id": 1,
+              "name": "Eletrônicos",
+              "description": "Produtos eletrônicos em geral"
+            }
+          },
+          "weight": 0.12,
+          "technicalSpecs": "Conexão 2.4GHz, DPI ajustável",
+          "warrantyMonths": 12,
+          "totalRating": 4.5
+        },
+        "quantity": 1,
+        "subtotal": 129.90
+      },
+      {
+        "product": {
+          "id": 3,
+          "name": "Teclado M�ecânico RGB",
+          "description": "Teclado mecânico com iluminação RGB e switches azuis",
+          "stockQuantity": 52,
+          "price": 349.90,
+          "category": {
+            "id": 3,
+            "name": "Periféricos",
+            "description": "Mouse, teclado e acessórios",
+            "parentCategory": {
+              "id": 1,
+              "name": "Eletrônicos",
+              "description": "Produtos eletrônicos em geral"
+            }
+          },
+          "weight": 0.95,
+          "technicalSpecs": "Switches Blue, conexão USB-C, iluminação RGB personalizável, layout ABNT2",
+          "warrantyMonths": 12
+        },
+        "quantity": 1,
+        "subtotal": 349.90
+      }
+    ],
+    "totalValue": 426.83,
+    "situation": "SENT",
+    "shipping": {
+      "transporter": {
+        "id": 2,
+        "name": "Loggi",
+        "shippingFactor": 0.95,
+        "deliveryDaysAdjustment": -1,
+        "contact": "contato@loggi.com",
+        "website": "https://www.loggi.com"
+      },
+      "address": {
+        "cep": "59111000",
+        "state": "RN",
+        "city": "Natal",
+        "neighbor": "Lagoa Nova",
+        "street": "Rua nao sei",
+        "number": "6666",
+        "complement": ""
+      },
+      "totalWeight": 1.0699999332427978515625,
+      "shippingValue": 19.00,
+      "averageDeliveryTime": 9
+    },
+    "dateTimePurchase": "2026-06-29T19:53:55.221269500"
+  },
+  {
+    "id": 2,
+    "customerId": 4,
+    "paymentMethod": {
+      "_type": "CREDIT",
+      "cardNumber": "3333333333576876",
+      "holderName": "Ze",
+      "expirationDate": "12-36",
+      "installments": 3
+    },
+    "address": {
+      "cep": "59111000",
+      "state": "RN",
+      "city": "Sao Jose de Mipibu",
+      "neighbor": "Centro",
+      "street": "Rua Desgraça",
+      "number": "666777",
+      "complement": ""
+    },
+    "items": [
+      {
+        "product": {
+          "id": 4,
+          "name": "Monitor 4k 144Hz",
+          "description": "Monitor com resolução 4k e taxa de atualizçação de 144Hz",
+          "stockQuantity": 18,
+          "price": 1239.90,
+          "category": {
+            "id": 3,
+            "name": "Periféricos",
+            "description": "Mouse, teclado e acessórios",
+            "parentCategory": {
+              "id": 1,
+              "name": "Eletrônicos",
+              "description": "Produtos eletrônicos em geral"
+            }
+          },
+          "weight": 5.2,
+          "technicalSpecs": "Tela TN, entrada Display Port e HDMI, parafusação VESA",
+          "warrantyMonths": 12,
+          "totalRating": 0.0,
+          "reviewsIds": []
+        },
+        "quantity": 2,
+        "subtotal": 2479.80
+      }
+    ],
+    "totalValue": 2514.80,
+    "situation": "SENT",
+    "shipping": {
+      "transporter": {
+        "id": 1,
+        "name": "Correios",
+        "shippingFactor": 1.00,
+        "deliveryDaysAdjustment": 0,
+        "contact": "0800-725-0100",
+        "website": "https://www.correios.com.br"
+      },
+      "address": {
+        "cep": "59111000",
+        "state": "RN",
+        "city": "Sao Jose de Mipibu",
+        "neighbor": "Centro",
+        "street": "Rua Desgraça",
+        "number": "666777",
+        "complement": ""
+      },
+      "totalWeight": 10.3999996185302734375,
+      "shippingValue": 35.00,
+      "averageDeliveryTime": 10
+    },
+    "dateTimePurchase": "2026-06-29T21:44:43.654789900"
+  }
+]
