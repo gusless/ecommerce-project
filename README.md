@@ -60,7 +60,7 @@ O projeto conta com diagramas UML que representam sua estrutura e comportamento,
 
 Representa as classes principais do sistema, incluindo atributos, métodos e relacionamentos entre os módulos do e-commerce.
 
-![Diagrama de Classes Completo](./diagrams/diagram-class.png)
+![Diagrama de Classes Completo](./diagrams/class.png)
 
 ---
 
