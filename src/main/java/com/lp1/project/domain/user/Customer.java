@@ -15,7 +15,6 @@ import java.util.Set;
 public class Customer extends User {
     private Address principalAddress;
     private List<Address> addresses;
-    private Set<Product> favorites;
     private List<Long> ordersIds;
     private List<Long> reviewsIds;
 
@@ -23,7 +22,6 @@ public class Customer extends User {
         super(name, birth, cpf, email, password, numberPhone);
 
         addresses = new ArrayList<>();
-        favorites = new HashSet<>();
         ordersIds = new ArrayList<>();
         reviewsIds = new ArrayList<>();
     }
@@ -46,10 +44,6 @@ public class Customer extends User {
 
     public List<Address> getAddresses() {
         return addresses;
-    }
-
-    public Set<Product> getFavorites() {
-        return favorites;
     }
 
     public void addReview(long reviewId) {
