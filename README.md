@@ -1,5 +1,11 @@
 # E-commerce Project
 
+## Componentes
+
+- Augusto César da Silva Carvalho (T03)
+- Maria Eduarda dos Santos Carvalho (T03)
+- Maria Rita Lopes Silva (T04)
+
 Sistema de e-commerce desenvolvido em **Java** como projeto acadêmico, utilizando os conceitos de **Programação Orientada a Objetos (POO)** e organizado em módulos para representar os principais componentes de uma loja virtual.
 
 ## Funcionalidades
