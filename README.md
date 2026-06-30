@@ -76,7 +76,7 @@ mvn clean compile
 4. Execute a aplicação:
 
 ```bash
-mvn exec:Java
+mvn exec:java
 ```
 
 Caso sua IDE esteja configurada com o Maven (IntelliJ IDEA, Eclipse ou VS Code), basta abrir o projeto e executar a classe:
