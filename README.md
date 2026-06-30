@@ -64,7 +64,7 @@ git clone https://github.com/gusless/ecommerce-project
 2. Entre na pasta do projeto:
 
 ```bash
-cd caminho/do/projeto/ecommerce-project
+cd ecommerce-project
 ```
 
 3. Compile o projeto:
